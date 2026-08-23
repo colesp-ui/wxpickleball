@@ -1,6 +1,6 @@
 import "./globals.css";
 
-const LOGO = "/wx-logo.svg";
+const LOGO = "data:image/webp;base64,UklGRs6X...";
 
 const games = [
   { date: "SEP 3", title: "Season Opener", meta: "Opponent / location TBD" },
