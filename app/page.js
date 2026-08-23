@@ -1,5 +1,7 @@
 import "./globals.css";
 
+const LOGO = "data:image/webp;base64,UklGRhJUAABXRUJQVlA4IAZUAABw2QCdASpAAUABPmEokUUkIqGWi430QAYEszdwuJhxCp/zv5M9ollb2f93/cz2beNeun2h9z/Xns06qezPM/6F/4X3L/NL/WepP9g/+T3CP1U/3v92/yH7JfFz6vP3n9S39U/y//Z/xv7//M7/0f299/n+B9QL+pf4f/n+uV7Mf7q+wj+1X/09oD/sftp8Lv9V/2//t/0nwM/r//5vz/+QD/yeoB/4erH6Z/2j0md4v3b+9ft5/cfUn8b+Y/tP9n/bf+0+2t/geBLqb/g+hf8Z+0/6f+0f5j/pf4H95fvP/F/8L/A+J/xb/uP7p+3X+W+QL8T/lf+S/sn7Zf4H93PrA+67Ffdv9X/x/UF91Ppv+s/vP+e/+X9++MX6fzJ/hP8j/tvuA+wD9Zf95/gf3r/x30b/yvA3/If8r9j/gC/ov92/53+D/03w1/zf/o/yH+0/dH2ufn/+D/8n+X/03yFfzH+wf8v/Bf6L9rf/////uw///uO/ar//+6h+wn/9/23/cb6cGL/Km9OrnmSplPMdHzg8RacbLXikr4jRQKCSlRwKCQANoQz/0HyGBv/rztryHCzECYtnPVIRrtokjR0k/1Z+5T3tGrpi020opdNu2GrT2f/bf7XESAZISD77JTUrE16umeujPEfyCn4bwCnUyqF/HYNcX4WYFJtpRMa3U2T93/Rj4rEdP55hPfwt5d9PtvvrLmFnUIqkBpb0jNrI14oHLvZ/oEt0cwufsV4DovjW3AYxbNOhUApxP7w8H0KV//OehDcjh/x/POcKp2CgiziwmgFlVpBwWIkR/X+ilm3Y8F3fSwiyJ3zMbS3DM+IhHRFq4Ct/K4vIUUk2YFunT5VioljcPKcpmF2yZU7OHFLrjt63542IkLPgS1f/JcEiT2HHVsKh2lTl30s1+DvNm467NAeejzNQp2UMysUocArHUoJGm21S+a7B07LGnj6xLkQY5vQnzZffmd91EzeLZlbTiVEFQ1jFzuEPVUGfQlimXCfNeYQ2vpPfEpj7P/8X4azzMqkEU8Rp192FsiuecMcIOkt+hFAV9wTMLCePOMsnLpBjEs4JCdYrWGlo/UVu6Z30twI9bBjR9pYnWjLBdQLRsfb7vS6MPHwGegKpW7B9ik2evSFtzubUoDPElyt10/oa4xsRHprgTewWTvWGXTDY1GCUbuWNtjUxQio8L0EIlyJvM+o/fV+4cB4HaZZNISovKHVyD5LRjSPJg+u7qS4rBkHes5wxcqWEdU/yXEz0cw+7+fDYn6oWrcvFcoZPEKIUbY7/0pzJ9tzwsbVBWn8vk8AntOq+J7+m2LDbM0k38luQZEWCUgJgRklT1OQigoE9HoOn+rUrUo3WyMjRxUej2ywzHxf1XsOgokeKoI6tyfhBd1hcmhfYspbKcYXBjCxtU9piuPI7rn2m3Rh4vofq6XR+YWNisklE/kj+BRwHAWw+WscQXZIWnvhG6fmFC9cVRjDOdfzj/46I+lty5s/ImHmFghjrGc6t03j5wM+DJNcYcnN7+JeSxINTh44pMmXnR8RRt7kFfxg9/SN2au2vwNKI9xN2+Kls5VJDpnAYaq9C+rjKYnCQUJMNT/WF1MkIvsG8diTJ1bY5qLwS9PWL8b19NVaiTZ59gsoRbN8Hx7jrjVZ1Y+3ADO7sWApqvzYotgsVF3H5nvzmfDbE+7M8vndp7SkXSeFpydH4pCkcX8zMKSblME27W6sujGeFpHdIy1dMEzcvv9xtmj8x8LKMjoeEYVuB4viiW1bW9+q76RTIpEzxiqLA82yL2L57ofXGQMT9AjilPriO4eSqMvBdqXoSj65Ov0Syjpokf0WQsm4ClLCDIqhrhmg+QIyGK9b71n0gXD5VHOOTXsthzoh72GEBBGASnUm8TRNM+CUOZS+jXwUzXsClOyIPMj+Fhq+F0099Iklg+B0lpVmcM9dGpbIq3tlIsXMyqA1uFNpCZ7OkGUCRnhkeHprOwNyCf+7ybjMfjqV9dqbhIvVk+ZuCZrGOmnPkHCX/QQWyMRarXO48yftzNnVaPPdX5z8Yy/6gpKMoFq0cpD3QnCmi8Z+L1a4VrWCUcCiRmNWS9bIxZq/r8GVD1hzMhrPHIJmva+I6blKG0i2zEY8nR+NMhrK779gQx6BGGelftlxKzqdpXhP6sJrORn0bkyM4flNgFMdt2fI7kqK9LQfafTpOrUWMoSoqZBH4XAGMxySpXfOVO1uZa1NRCvriWVyPomWKxNgf////MhVfY21/ySimO27Sd0twKj6mrAiMW+GnXyQZYP0fi6PaYpeQQAF6+XJLKVHAoJKVHAoSkYmxYipUcCf4AAD+/7zyAqMYyXqqNxeiZFOGSUa2/lFkdRVs+JaD+Sqm+cOYHykdWbhqsciYUSX4fX85vc/2uvMV+VXWj6N4lK37pDqfxP6gpPDHgRhz9sRWvcckM/3JTyyR4b3pmh7Pbs0NS2fuj54+A/hVcMymCPty3prXzvnvH4Y5wdJyYN5vwi8BdMTTXOY+SNGSGO9PdFlg5+G2LuKB1kF5FsSpQAATiVQZlbOU85Aak/l9KxDt5fbH2W0PUyrXYqLgb6/hjc2Q6Q5fvXmSYxX6RRyZ8gFBuby0Voj0tdarTQNkN/RR1gFy/9vQfWk8YZtN/z2LIcn1yOLW0WL2FI5n4FuWRVMzK69KnQfoF3E4EWyMyZ1STX1dxcFcHLbYqCaUTAYuGIudhipN+QibaDm7u5WOJoLZrVzJqwpx9sOu6XDgELS4rZsEtE7y3KKwwe2pI3zWFoTuqImeoQZ2wmGfTwhv8a9x6cBtJsXRgaOiV3IjV0ut/IUaJg094GbXYRc4Y36vswlAGXWSb4jHAuxol8kjX+fg6RxKXv/rBSy8J8l6IJ3iJBcm97qq3zHc3Th96S7X3bOcjRdAFoiKvorNn+ULcg7naiYJJ4CeeGQ8xy46z8VeZWQ97lGiio6UlrqIUE3KLiwkLBayXsNMoFhOU5NUXBHo03OaaqUp1vfJQD3pueFLmtgaMqMNuC7nwoQLgLkrNvafwg3k2ctyz/C/H0zKiwL8+TOHownLDBCMwglmX3rGb+ooFm+67jabsrriHAr9rVKnZG+VoFas2Gh+YwHxf/j4ZwcUQlPxJKxPueY4SCZk+FE5DIQKkJrFjT50RzEuPZ0Qrl7I4gmuBQx5bEXa29cSOI63pZqbYmYQ9Ki/ZR/scTefjZXW4PVg6wALBKHIfBOgkAZZm8/4BBvXEC3ecSg3mhsnIyzNo6MAGnk5jvovfi4X9Oes+DzrO7iw/nPqm5Bof+d/b0hr5B504RzpzarxxKYkkNxsz9BccC5rSCMJf4H004EQYm15ENaMb9/IQ3McFRfOh+nAZhqQY3ISj2L7E3ULr9LwYjwaD8GbS+tahz99TQXaULac47tyY6L54X4sZCndcVJpw1LMoZUrRrAGE2EdgUuy3Sh6KiRR304ATC8QS5kQH9dWu2iEWkh97U9dgf4ueTeCdr/Sjad0V8tH1Nj2ra6tdbEox3PwWfnmO9mkCbjUwufVbtxkvEh1IArvNOJ12eEAFBlT8t30D56F+kx+CDtSAQqFgQjkoyUb3mra92hvoffBuwhiYmU5NqTDsUj8JlxOen7xXIbzNJoqs/DhvQHAIw6vZ+VMkn5dNB31rz4IHa/L8CXCiUze7uDmt6N4VWiN7zp5usPlfhr+FT/gxuEJSTjJdoQZZaE0W7Zidkp6LHvP7/VLcb+SuFh4E8NJ2Z53Ii6iuCFxiBkM0Ohdtq6QTk8MUIFOm5jUfm4+rCQxLoQv20ZiXW/XtUf9kycvWR6U3Z4XrMp/FtfPIm2txqnPNIn4GcbXph7ERGQvU/256A3mnK4VuWvkBDFS9O8qmXNJXhN01u0AvPr9HMLXumeuOVwXGJ3UA0C/LTNvrpDoioGFlXO+FaCKeWjuhH9UA7rosOHyH1WvmYOITcpfdlGQcpHsrVUlFIUQj+9gjsN1UG6hJI1x4yuM6W84uD74ntWW9ooyVQhtgNC8lpT5egW8kvGzVcAfVYr1SjSIPgjlgOqULiUoxgWdQfS0L4JsJDrHAZG7JwNOVnpkRfIt5lJRVkTIah2ddrGVmQDd1gFFqI0uOIM3d+EnKH0yEUgjX0t+gT3AP1Ml0ixlVZgrSXOdgYkWWjIPcQ7NalF5DC6nm1mpLKidRDLnuIlmF3d/VMXCIK5uwKBkqsR0vrRXSip2Bl2i5GdVsHQlsAu6m+Cc530vWIVdKIUZS7uYYrjMx0xEwC++c50MnxCrGTF2q17eIe9WATsPsmB3X7Rb8Qu9b1wLthTYui0ztbqt3PKqbY9TtJCqJsyuJW4177HPCmKLibBaegHjo4OBoLvRDf2BG4GnrHQ8WgC6nL1XI+5qfYxW7PA5i/ekA+tvf6PFXJuq9/sgRx1/BLMPPbwTUWzdoDMTnQ25YcMCibwSb65vSdK7E8hck1Dj1EGGjSt1rpzOMO2n8byecca3g/nssgqKBJ8rwsRfCTEN2B+FNrVpaXJlZ4aPQxzr86lI9i+g32DAWuzwr41NzmkwVx0Vz1aPzbPlnJi7Z3tV+cjgTkCz3jwt82XB1ZRqYWNw9qZGX2/L4plNbU39ych8Ot877XRSxgO7apWOtIN9bu1K+X5lfRrQOlFKa1ks4xJGuCr2BXXFmdQnKr0k8TTPx0PWEAjp8O9aGcIQJIrUgC/cE44bxBO6OChFmqSNvpCe7bH/jWbFZsa0GHO0QAjn6Gj2/2WmUgfzWOUvmbOz5x/trcXFACgYiJM/mlO1+iE3Z7cUIyCJgo/SdxQtiV2NLPnfJurakatXhZQHoVh3JQV9ACCTnigmMhholf0RrNYOTkSaq0XzLQ+JlnGWPyhxpW8Hv0khd1aHNqy/gmNZdxVyLeLLIdEkxSP4EeJnmz3Xx3wyhn+pdczhXdRkj6s4o0I9rcs7qj1GcWpwAZ74XZZwhWgb7of7tJqMxdMH/Xrjl8JNtGn+j4ggB/ehEo7N4q55TWOtSWgzjF5iuB/Kc9tza3wHcjBLbksBl4Hc7MdF+oZ968/J8TeIfZNyJPDCvmC+jkuyafVlTeok0gbdAMmvXo3973O6tlKpzQ/UI/aaUlGKokR2UTQaI+X93P7Dg9r9cGSJ8XqJsRIxTt9qjyIiQKfevJC8whvV7chs3WOsW/udvKh+cruahqhiAv/Zi/jVE0mEMWOYkoq3t9Q2HlToNtnzJVh/pgeTKhSGEYI5frfijKoHbpu+CYCbMzoSqOT0RZ3cyNPBAbc4CfSLUzj1P/KgVIfW5Br9EbrG9frnNY8yypibKLm3KALWYUZzf6pw0QMqeDcrINKnYGIcA4LGSNi6YLpXUobzQ7HXu8GUJPNpgxnE9DdWwMThBlp1hojifQ6/2O+PC7O3oKcxSp61bEwSbfUV0MyFdl6rXsxO1YyJvW+VDUumZexCMTet8foSB5+fI+KJznApbhoauOpvWWvgVs+9c7eHa1XHmsif9ZEvutDQOpqEkdnOGAIwDlEGknbRKkfnEjqNnaNc2K3xFrr5yqTWMoiwHoR3Bv3XqMyfk1livP6l/bHKmrOQRtBEGSHspUnc3+2pFWk7JA0pn6fQ5zGSrIBR9HfV4kSyE954Cf13Pffpt1GpigsfCUfrX1lzHIBDKCVea/zxAWb3WlRzPrwFkG6sw3qOLwkOzIXvhlOgvVze2NyToaqrtRKUyMx8UzlptE/QKD/Og/N+QCqGDeoqluIahZ0U7SGn+qtQGVNMTxZ2vGVdjNj/RIqUkZgupNJpdgSPHAlusX1Y4us/uqMrn+L3FnTLzLaGlIj26VWF+OEoDUlxIF5csFevhfPx+5pRaZSClb3skc87x/nQbgytn2YVU/nDQbJCXYD+Lyd9lSgFCuQdOzq9Q1Z60z5pWIQ0xJfnPA7y38jqLvhJa2mhrd0RS9rv/ytwJqeRZDRol4U+MasEk/2ogllsahi7V/4dBH6/kKHX7Q7t7opudBGVCsHzA8LB1DMbDhawoUlraHy8FS5BbNPDzQYz2BBTJz9b4Vm/3hP7XDCXBXSl+Ze5P96Tptc1+xw8Exr8Y8S3AZ0DBT6T3hhSnCvEHrMYMNmZltprfVIi2uS3hKV0D0RsdILO6NSQ1MG8MLUd4C8wuHwxFBupFAtXQo2CiXM80GCuFb+VCUCCwouoaipNTJedkZhQGrMLFU7EganETNSTWce4FlfuH1YFu/+LWeoH838Vl1H+Kpui9E1LDiu24D+f5WljxFqpX9yusVmP/ak6oAhQM0xyawlagxlTocLc7WXf+ONG17iTLbtFgkw1BL3q1PXalS3CQKlgxOzw42aBw4M3Q74YRL5BZ2K5QDUbXngIW7IbpEheU/xw81wyxCNglsBSFX4fVhKmTEscFB2Xqv9W79wOEiKKgYQFab55hPnuOHRgZZmzf93xMX6JZyCaqStZfkIqn1qtVzjdhlcm5a4VIMiS6I6MI+14MwRzbcSsUKjWl3P3JsAkX8ICh+ebp33Im+j7sG2GONLEqDwnKp+RYv9Xs45WYDdZMkI0MR5Z71B9B0dDHN02IOlip+6o9yg299a1e4i9EGvY8NalNW4QCXXWu2mpm9fdRgYzEsUHuuVj5U1O5RGbVnN9+Z3WQi7NjXchLIlBRf5DwSPs5XfoBnZLatKRwvzcDKXBCqzi4zfZ9pS/B9FhjzjXyciHMpqz69ydf0TVlpAPu/Twpa6gj/qdMERqJ5kQIlfMOq2XoBSI/P87k+DLp6MrZfmAvh2sFE+Q/C73vyrcQV3nNSyfKNjkn/ACOevEdpDSvCjgwstxNsZgpd3XEkLilbpCBH39XsoVGZz3R4kGARO/oQA1leCSI7MRXsRFWQO3Y7GlZ/1WNIbWWxhLrew/EpB5GaBkjeL9cfhCuHEmzuDW6gdiBFWeoZe//N4ahj2A8ukrR5EyVPzvH6aSs3kuvx25dSqKu5TKb2xZNwbHEOZADJUpxpxzKburvTffSEt6p7Dt5uquLXGTSH8qnTKxsOnw+r3ybY18B6Rq43BG9yYZpo0aoAVkpNKhxoiQ9zdTh9Mh+Y9DGN0Qs74C59AIcIb30IHZ93EHvTlgApVbi4+5/E60ILmFEA7rtNbAqWzc3G1buqeNXrJ6yMq2Bgf+e6Eh1H7NBcUCxCU8di32HGlMIb5Kf3QlkCH3w1Kxh5khnZHdWdJiMEG2pJ2cS5TdHzMCGbKMmwtiIVzxxSDSyxeiXm1Ng+4ez3YLMRPDI9+T9FKfGg7XtRgop7G4iD7hIkpbXGRszBNTsuVnOyJ4+63XImdJXbJwj8ZXpTHk1YmJEtfv0f9zmwvUzVcIGScO0rxjEgBt3sg8lKTFIAkpkFkoetWKERXp8JSsRA+yRb1dX3Qkt3M6qnh3oYtTwoWJK7nhgjFqFy2GnD7OrVKv2Y17LT0uqahS5R1RR/xl1zsS5AEeAIbUSMHVUZbcFS6PTneXhAk0JaTDkG63umPTpVbwYLCSGUXcIjVE57fRkaH/rLUG3tl0+BLJalKRY0olIRnJB0LOLj1fFpcdhZ7+DO851FWiMC7edcMmIB2GKcNKSY865GI9GHHoknLi2GLsvYqCXTo2KxfgPer9KmjtuU9RQZnDDWU0UG8qBVNRlu5y7aVXgWtDJt2i/vHbWV7aK9NYffpi3/JjLVjHuQTSLRPxWg4Jhu8oLOUnHnv/A4p5cZZB5yh5P+WBT2N0USWaD8EQXw6Zw21mm7oKFPAR2EvlBidtL2Crq7bZk0u07aqK7RMmoppKmuND5a3bwFpNF+5JJ7Lm7kETLzmOs8d4cxhxoKjJdDbsJEcJOG5/j6YnbV2nYZL0NV6VrSl0wzNIENKb0qmZldzEYR7DcPj3Tuf3UVeVdhYtoN9xuKg9x44ikjyyeJwoxBEoLmk3c8gEhSRpKEHRDjpJkwAz95LsePun0EAm92PY9QQpjzAr9QZPtodoGdJ6GchSi/2xLtvIlOzFU1mJZ5mWO4uDtmvs4Q6T+fOdonF9vjRntgVu+rKH4of4y5baBZEOD8EMxpcs9WbE7cFrgHr98p3PiBFaTBXBn5vnA6728dOnFYo/NxbadRmLoS++EKmgNJ0ap5SsXXkogYdoCKBwz8PbX6qBNQprvb5TQ4oQR6EQNafp6wRaS0AEQ+wdcWzVN2RliheUpP20v5miDCuhbNj3HOn/EowdFhJ4cPHGkIy/HQ/sKUZW5B21Erx7X0lQFCWwUFQm15bntf9kAt56Lj/4m1mpjOS2/XRUOAdJyKsCShLIJQR8/BUJPo0iDsyVEtM9DDpKjvmnCINHBPb85SMN9Ao3EOjEOFn2vueOZn90Bkl8ixqeeQ/K+lgmpc/uqJqaxTpgo+d3NtTnCq/RJpwGBZ99Z03ijDf8DQ9azO7I/5NwCVWiEx3B+fHBVZDTyF6d3mPdc2S3+FqhFmU/Muqnw7kApzMHbxFYMYKAgQ66pj/IZfG094FnTHxL+UtA3PQ1Gl3OLm5KvdBFuFcjOHgS/FZGEvzY3o9F9a1+FJzTmWf7DUZ0swm49inq9GlHnBT7B3KjbDdIGi6MLPePH3a7EHJOtCVeA9a5A5gWW/nK8r7/VM/0FszQTkmrXbYfl+DC+mNhPLu+ppAUlhRih1pP7gWAPNPuqjW4jaxXJmgoIKsj9CGRz9NrVk2/clHV9Y9RFHi36+xYyEMwMYHqBtrFgNsdgnxlp2jbSsH+moi+AIshJLw7mMdbXBDaNZD3biCbUzSCq0Lq2yzf3B7kT3Y0cC597V2jbU74kC00WiNmj/GRyClkKtqsHn1ydwwDikpb756hp+oh+8BiEPQ/wGKPttMJla3Wm6pPUR8i5sM9IrLz40ZlPm8F+m515Y3CzFjjdUHVw5Lh6jvAAh+TMAh8ZMxlUNEWxdtXpvOK3HeojlodLxfSJcXv/1FCo0A5NBogntvJPcX0IgqoDHBRtPpgS4qxegmnYbaOOQnK4kNIp6wr/TKNPh5b2lTPifJPXPMwbGAHBw51VoMY2hJ47dFgowRQGa+ZvasvMxPzmNBSm8iMkt8rrXHu2Z3Ci/IRL3/vby20ZADydO8N5yYLICCv7PemkLs57qK/8zbnbk9wv3CD2HsgftpbpZ6rePhVAHS1FTk8i7wvJsZAXbQuQ/qIxgr4FCjR5Iwf/Eix83PLxeUVTiAM/bDzoms/XDeAV08ZcU02Evzg7eq/fsiGjEtN3DCvgQ97WrfmPxYOIxm7PixYMWfJb+Hmspc0axbA0pJo8nn56yzJubYPypFXNbfokJVHxaaZyAeLvo7L7SFYsopO/4NoSEHeuSCRtAQe4uf10rpfN5xIoT4EXlaKu7yfbFtwBUItxUaJdBXgoddMCO4Kc/8z3EG7leor1YpXVd1ZraaVl6xEKpwOwNiWb+/U9jmJLax0uc/CWMGnOL9yh9N9sjZO+NDxiLZUkQ14sF5i/l8Wq9BsRs5Y0YOhjPoL+z+65V5V9/IX6Wv8+8pC2hlObP9RihILfG+dvfdfYVA1pQ/9gttskvBPu0JIlEgYygk8/gN2dJWXjXwStWLHiZSX5YoU3vhHGlpQtauoMfqeiwFqhmkQxKUdTd0EJ7vq2Y9TZqUbs14JHVPOeR0MbOJkzjLZV4NSxmDFOVMDIDBhs4JwHi+3/4JNzcDS77qkUxpQ0BOXlyhmezhLARapxvxByNXKJmyq4DpO2KNpspDGI/3b+jNOhPx6NTQSmLbU/Wz02CpamYOPSxbOannpApETTrCRfveRdzoSHRLZs6MS9LGlLY35mAXOu6eRmKJ4pVkHONnZS7R8PK8xjyjU+n8NrwA9k9x6dmkefZ9SpDcsT+M0iGvD2KfvFdb7WCRcJWM1F8FHdm2y6GqImVfAHkOcYVD7EKPxmaCT9hR6y06D3f7LHB8Yw3ZU3OrXtU+DeaSh57psJbGFSV4dwqfJh7EBti7wHMCW31cqe8xn4Z+XCaBZBM4XO0HCmBrz6TCIXZDt81yLdU92q74N3nKVGBxcIGgSWXVcr8UQydqJGetFaZ0LcHyj83y5I+KrT2LiZVJYedZrq3mMacZ3ms7xDWS4H7amjtqFmknmop3TqibTSk28SBf+/eeCnG7M25TriZsLObkqb5RAQCZUZ0i+ukPaFnkY77pcvcvZXMUc5mkpcAhs4v1xelL9hxkY/EoYu0q92b27nqVZ0HvJIAmCWwkG347QcYS+Dy3yDEv+9M86ZfKlXz6O2MnvB7BPa6p79oaRtj/mJ5rX5FwekyJ5bcg7YmsG+igWk0sPLxxkrpasMIhjowQa2cVQLo8xZ60g711i4Scm5kZLbln7FR+K98HJI5F5J1/uFHwU1Y1n0KQQaSVVRpHQ+sQMZ/mxZISzfpvGDtPBgN99FDjJUk+78muGsQqBiSZiq0XhXXnPMoX0aesV0yxDWpfHe4nDfc1GjYLZEmJcFfQaD6NwUeb8/gZsgCI6jN7o/1bGBHgojpznsClzQJhUo9Hn1j4dufXVMCwOjr25+SicbzAr7jxb+YDQv6rDKT6hXzYCw/nNV7zduSmM4MsS6E2EhHRXviaWyHQ2j22U0DI2kVV3TZPlkkskjCjbSlmVKDAU3QHvKuH/sx5GFvlhBicY8nhlQc9yCzkwva6IcYvwBQaFlgMDLnwU1jPUpsikF5KJqdwJ1bSn43X085eiMJ9fIYnb6Vvrpg946CXiKNv7T2VWhKyDOwYO0HfmBRyApIvz5WAh7umbo+ZSFZabs1EA9P7aKrrgYYqI8EfiYdKI1yh3KSH9TTbin/+XcNr2K+JgPS2/A4vAASU4r10LYB1CsiYycAubodw+lZmtpZroZDtgTyIuvOLf94gKkjQv/lV2MUIjZNMqwWnM6xgHoMuPFs7dz9vCdH8b8A1BPAhsIBFfisxDdNX/P8PQ+iW9Fa0hUQXTzsM9JKWSUwLv33JJzdUIWypOMgZi6uCkc6gLoHqkiVowgeekEmJAkBEnJ9uCZbraNqdKSpwzd1GbeRnfa8/6BCaWfGfnyz7+NWJEioRCYj66gnTzXIY/xtHb4GvXuZmK0FKMrX2jFFK1NXL0GHP0cxE9puW+YU9Sz6FEzVyM1i+vtTD6dellSbu2hQholomDUzNs0sB93DJISssucrk1Ec7xdrb3Xq90M/2cYkhvkSN9dG8IgpFhQEQ2UV/dwulc+fA9qOKr/ftT4zkVixI5gEBXUmCeKUi6657aWFCwNFRGdUGBi5pI635SLPyRAuf2vdCA8MR0Ysw9GnWS5nIWznzoOAp7WFmh1oo9C9N452sSNGbrfl+KOpttoCyjJVGtWN5cknkagZjJD2QkXancBBqwynToI2ZuBH6hElnP7WCoxnRALT6Cz4dlsnwNgNFH1iG3dRLiHloz34TTWzBAs+gJFmivbLFnnYmb4D4K/x0Ly7w7tVRzQgeT6rrBefxq/JvcYjwAOntK4F4jRP/ptal9pK0AE/R5T4YBe5OodRcu+xWkyB+LmwdMNKUHI6a2ad/FI7ilk38z9067Qmn/xoubW+MheSS3HVLhmuLsxWG2aQe/BCxSD2nbJOUct+c8QeEkDaIPijVwr9v4nQ6CE/s5YTcTDn6lV75colKYkfyIL4KVq5oHj0aM9kXsl+3BYUixavIg+CB+S+DKwmu/z4cegfAXNLS6/XCiZIg6GsjplkTFLWWV6UiMlXWk9VOKKZLhRhOK33nkkpOW8VdofIDntNH2TFspoU9Nnyc/Mbf71av1UfftCtBHtNdYTE6ArB5+ObDEnHvLJToe0MuPlGLH3ZYP1RpradUaN3Zqn/OkCojP2hFGpbuRB0QV4iSLPrWpkTjGulNcPuHMqktoEjJmW0VPcZg7uNef1E/EIS19ps39F9L1eHe6E7lZm5e1lIcZ0E2LHL3Jnn5VYCsVB8tqeOAaMBqVNR4vEe2k+ELrVrqyd/cQ/dL1QIJS5Ro382z5JuJTNBC7oRBR5fEebYcpA3XqSHtNSA85Ju5cCaup6FsERXafml+xbYLH2qU3V8nUFyyotaB8C8DcYyixo/8+b8sQchx9q62InD66OX/OH7Mn/ktF37l7+KIjQAv95K+FTT8oNV92UVTnxYgtbALQyZJjQY/AWF6UhHj9e8PpjOWk9jnUzQLNZM7uR5gT40099bOD8BF+BWhX2egat7Z1bB3/glWwgVBMALdRjkFfT4h+ZadUntDoJIMVmTqJVCbE4mnTo4G9qKwAOCButYS1qPMKHQAlZwVFqZvz0LFAZm3z388nnXhe9yWiRI9iZwJt5SW+HcNTZiIugoceES5ZrdEvkYvrwtgpkYL2hHfOJ1P8q29Zv/DmrWnl9Tp/qTjKK5o5UbFNK/kXsplpGmKRR7UxmuJU53DBup5SqKS2oqfpwKJyRqxdB4ShlkeYdwAUB8NryoibITqj21zRKISYvT5/D9wuiVL56/QqX4nLy+tjuqk9MnSgy0lZhyFknxMcbZ0/kuZ713zEMOZlvs6eFSKyjxObMaWm3j36FtkOlyGQ6L0kQJUcwfbmq2aEPMjk6M77tvu10FQZOoP5O9TohiI7APM3Eaioi2kNAmzupBjp00W1aQl4U/RJv7FTAHc7MKuEH1Epxw9CseuKGOZHnfA5efstVzSttrCPeiwsl/TOAVFbtw2SlIZXq53aKe6Dx/cBBfqnoOy4dfdsqiwtAk89v5nmMyzr6KkjDT4vf6FcAQJoBwuubKhVnmY2tPx8omV/8ubTdaO0Yzcz/MSfb/Ds88CbJkaCMkk5ANlyYxAlu+HC1JQ++j+bsE0YJ5gz+sUI78p1V3+aQF8obVwvTjY0OFF3YquwIb+chk5rVcSokCuRE8mU28JAf+V9okdhvS58eTGOJY84hUZp89FNfiDpoKSHe3dfsE5r5Jr3wTqk053s6MESzuaxN5Oy9YRxkFNSn0x52XDSsH+IXUtF4bZCEG1G0p00HNZibScsG1RvB+0QeeVrGQ4z7m1iwng25qIBfuKkhvKpIU6hnh3gt2ZaWjVAatrEeIrlcc3V8LaaywoeAO3pe36HPP3ScyWPv/LULH+KF4O3KM4JjBDIB/E7t0lkdQNAqfOQg+tCb43V0kICRdBuv7zhWtCantk54gJ5p+T1EopZYqSQ3pi1OUVlKH+HRgymRyRDmBAJRNzRwn0ZnYcJSJwf0qmPHOMM7I1XhlxpujyI3/otBbdENjTwHC8AevkCWgS6m22ji599WF4vLVSOEzX/aUD1gscfEwg9SfdRvSNnTSiJGSOdlNmILhWPxcgqfgwzwXn5T6GxehS6Js+n5Cw3Qusa2THrPyB3cRUZjpS1U3RutHAcv4rZJWRv4VFijMAkhkPBmSjRHFvQ77K6HveclliUx2uUkRsZEoa2qPusDcLc8bjAbYFRB8Fxm7w0DTlmqVTGW9mil6UoF/6DEch+scMp6SCiXf3V03vrPlBOmwc3WtoDE12XdhPMJimGs8Cu71Y6/WnaFBXrAOTSqVI7nHtIv3HvwKT1NtRu4qmiSSfYGRRzmxlUKjqBr8+3LX5FR+2dWDUm5XuqGZJGfeMonB3bs9hjPtCgLZp4c2pMU8ChgApEQI3yyOwJN6ToBoJdZaxb+Dfyqsy2N2wvoCn7ZAcxH+LNDCvSyIt2N3c6NjYLZTB9c7837AuYuvTPyKc7rhh72SDaUfP47DUQdBu8l8C3QNeQJt3/9XKYfj4D1fX2VLbgj6peficLyUBNxVrkZuTL7VMmPZ2MEbD1/G8tXFXYvxokTYgnTlYlqRwrrXF6ny17KXxEtOT0l/PHsFatC0y6/gvloFjciFQmsXmcuLss3rGiy/3+sVmQpoXgZ3IbXdpPFDjf71dtHACH5E5qyq0UCfX8kb/OtlLJA2rXhY9ZwYRkWcIbAVCDwQACeG8p2n5yDnekC/59l9xFQb8iyj5fyQ/pnDT5VZ0PnXpo8TP7/zGpXjW2p2nieZWjW9Br2hMAmns2KHOY1OfInhGv90CMy6lzI2l7WYcDkcHVhXhbV5V7MTzl8SRqPIbx2Hr8wbkvdOIvhJN5Txwa/Wo6YVqU31NlcZFe/KUd0CPRUFmQhjZaldikeTOkXoB3vVwy8/oT+7LGvXPQqe5ihHiTAuN/KmVbHvuGovA26dIKuogolC1bC/Hl0Bx6oSbxiuuXViD/Cf5RtaDiXWHIeDT1UDow2DrITMXoGkZDV/vvgBx3GA/l8J9qIoIMuQzLZLUWoX69fOR3goT4z7FMVio07PfNLaSviEMH+kinHnx9gXTSdxxtVDbH1/629klvqzW2l4lAInP3l8yTJW+8nupjwwTSDUDnDRaXSMPjOe0yocq2VAF9zZeiHrduf3Gtu7KNYo/cDpZ86sqzg4sZXmF/JhvGmhgvGxCRW17kMRXX7m3tunZlIyq7d2FZkUndHbROZQJPmkMD2AKGNgOSMgYOqO54AYG/6m06tFHGg7KHrZKI5Mzy2j2JsuK82MRGTxHknPZSws2BxM/Uy4pNu2/Z3Ycp/8q6iMzM+lsvD2Zu0QZH2k/eW2EdWg5PmLAiOckeUoDLMfj+OtBu/at9IJ1eLibblu0jyEJhj7FOuYQW74lnNaxR1plgQPoUhocevaCebk5krskoyu+X6w23IZujbCigRerpwqop362KOyBLSHbqQSo39xRg9K0hGEt2EI8d1hN83g2MyskOJA6hnKhW30DE9IFP1ytoXrSoTimu59o0SRULmo9WnQeJcX6j+BbFuF4FwL1j0Bqm5nyqHbTrvGbn6tq17R+jIfZuCd8e3TDVU1g1znSSKhbi85GsLj2OYV92WMjJu4qIxFKTS+sPYZBfQSxPotcfcTSSUsyZW5qgXKrN7QE+dKYKJ7/tfRI4BxVHtHrjBJ98y6MuPxmYDftYnbheW2oWYEykr2tgw6qfMnhc24s7ACLbLiDdZQ23KPFWtIwvTUKgfqcl3eP0HiforTm93gB7hiFjp3w1inEl05TP9ST7w0WcWn8KfDQZ/Hwa/maaXXnkEqWZZJWt/kBAVK1VfmYwkKcwk4n3gmm28oJyB6wYgS/Y/EtJVN4aQo/QDvlDUnLV8z2wXQErLzIlhA2Zv2NQElk+iT91/bG4P05jy2EWxdcSalZkFS+EhrYafHVGg0GgE8TxrqZPNXV1Wtz6szIhpWAFHIdMV9rkdUe3RYKO5/zFoJF/fuGFuivSgmxHBJ2VxDUlRq1KaFRfM7bOqN9orTwwFyzPetsnN/rsRyL19KzSIHmWDmyFVYicQ9lFEQi8PrFSjNvc/aoaKzteRp2W/xA6Tz/b0f/VMVuVzKgBAI95lGrzlGZBXa+NjpqAliok5ZGalEgRgk7uVopu9JSyCwb1s9F6ooRkXvkIyEN63BnqcKJpSvnIZjXCBD57Jr6PWWMRFWz7evXZBuRzX+nsBSs6mJQy1RS9i/w19b695UEANkYCWcguuQUbq2FJhwQCuXOW0dEenr5mcwhPRd3ZwIAFqwpTKY1AAsvJ69oPzgrBsl4c/jVjOAu4zHMHWsKlk2yvWTl7Qws7JoVkCRweZvF1LeZ/ejkjDPjLt9Z0rKw1csAAkCChg15AwW31eKllRkbR/4BSvz4JfXANqVNv5DTNg0nqWudhGGsqOU4PV+WhBGIQVglzoXuUZF3yY7Fe0NcY3YlHy2S9rTPvxwJEtwWb6sA60cDYQPCOgppVqi45xiLutvX1/uHTtJ8WVo7y5HotBEHhgzzmYqeLmIQ9WpnHsuqU7qhFDH9a3yFXGjoS7hTljk5wx3XsWXLurjYDa/S+s3vU/MFSl3dZRQMkrL9/NjVi4WHyVbg+5Q0U/IWSJo4egRVZx4GDg3oI9gqPZKmz+mrUWz2qCB2+HUWLqgxSz4TDQwlZ079j/n8hR3DFIl+PJo+0GKtW5in2WhIVoynl7RDBwR6JwxIMsTK6hr7JEiwOzH0xSd0Jdf0aQlTuGYitGJyy3UxpHuADdXmpkxDTNNgeigj/dtkkKbptpiDH+QJMuZqJ82LngxGMDahvLxITSWN/kGZ3iBZZ0byqvkxPAkwULBz+McotASu5jkkkNLsT4w5jqY0GTCyC/oV0CWlvJgnDIq3gXV6dm7YIe2YiHt4Bl4/qMyfYyHFaFTQ4Lgu06pmBlspxmgl9uhMdgbzi4kIciAacO0B47gpUn7fEJwgqc73SVoE6Yn0OFtcC70cGCVOeaqV4hokoRJ4828iI8yPF/OhIqjl7ecGu9Ng5ANHLeaq5aVzYgBw19sx2fPT9DdMGHviJkisv7CJoJplclUSVABF+YLWpughWFdh5WMsIRwnDfchsGmSlWV2PxVl+qZttVgbAUfNlCmm4xVIHG6nWfxZTyGDatGvvRfobqiaUGj541PA/LpxZpsZCo7iW4Og7cbfjzM1pW08by00R2IR6+g0Ru8FUQvEAHWt2Z3FQIyxHumr/L6Dzh2mrkz7xjAEWslXhXLtYZMiNEzWwcX9zXMubaR756Vb1Es+sxl887UCxsOrRjcNVUeE+fYaxRNe/ZXPhoRupdlZiYpTDkgf7NZTtTAE+EEMymLfyNZWZ/11zl49+MKqygHWQJHh7zRv4jld4BeU+N7YMBaSpF/ygMvjmw7LPzWiEjbIiKpVdbqXiti7/LcCSefPv0JjTedC3KW6vfzORoyBG2O1V3PoCvn8SZQBlXqgo3uy1EDRIp/cuLCWaUKypv+d8FBpxXpujvpIvSZq8qLLd3rHfNMdV+wgGDYrzi5Jbqc/Abnt5X5SBlC8aO7QFO8CBlTw9WUX+t0FjfsYYnEcnJpZJlndARJ5YS0LCzhmG0QCZpfj09gC4T/AjjCLLZczqFLPx8OXebfN40ausBm2nvegf3ZNAvvMBi0CSkJJL+Zz21IadfOT5MWHl60eDXLIyby7eDe9irg9h6/8FMPrdJWtsI9kWUv4FxqzQslgT41d+DC/wsn4wL9sZBhREtTLfpMK5tfbUeRW/ygcVdeGGjHzemdPYKhFqBq2+wRIfT6joRWVeyVcLDxxQRV+MJU03xed7175wvNzyRigv0AsbqqYxAIwQfRIbwhEI507ufI7/JXRtkuQZ+cpPdkarT8Csbpp9OPvjK+NmijRiXpdTVPZA4x86GJw6guwmhQKNoBl5hgP8+EeweuK9VbSQyIEPXdFjkNmsBZpSarQeR//6hX57o5ouOVirwoPUcFCzWWkkvGDT3lgn2owLDIYIJj2unc1d4cHGq82ErPRXJoR/wMKZNhOTeFMRKuffVplQkRHbsAPdDK+VE9aewU2qdMgIsQasJ0kcW0e05Aeo7qs8qO/VdHfa25KwAjbG46XIHclwVNNpZ5vODG9T4aCsIXaMxfOEtALf8l6McRKV3qgriErpjAwadBoazo8ZlQ4VHtIyuF0gJQii6KYQqvx4FWwzUIXUkLawOj63qhVNOWkbof8eOQPix2Gnm3MLWOCAbCOklKmcT5XqL8ivnikDd+OOJqhksdmzp3WsLfi5tGVRZoasP2dzLyzHu6JlV7UBck1/cCw/2noHfHPs27jDbkSrxCJAPGTqzPX3DXyisJi3kq0aX7IKib+msH6jWP5pMpUplqLZ+VVJ26Dw8THGQVkAOLrBs6o8W0ACDvrAGzkho7PwG5fba3T7QMn//xo+1wq4VZKP4kxC7et+l8xs/fNZG2qiuTTiGsxEzcV8c7PSv4fqoAFPPXmOwLwbtHg/bcsZ8/Jg0gsRgIOhnTIy+hQLMjBquHLTE+iX05knRu6voGFB469RIYQ2w+dbvXOZBWdsOkDw0w80DhLK5RVJ/gutL1+a5fm9sUTl4IO+G73yZg62G8sAiwdnPG9o4wexLoxhNF2e3kjW8WBDRtoivdv8/jxUc8eHxjpiP+ydCZGWqc7jFcovBR85TDT+gbZ8rnl8HCOD2fckM9HsoNX5ianSzJS8eIyhdVrd5dbCfj55nB6r69NSu4mts33pNrUlVF9x3MJwpky6F29nb+Qa5tkGOco+5+v3G7IXW40mVuiEmZ+ifNf6HOQAeae61PxBhmAQm+1WhYnLcTXFCP4AAS2WyYbAlpEN7gm2T8eanaq3ilCWgJ5aN18NQdoytyJhJvmkfCQXObpsVAXUlx7tktR+cqy1o0wyCeSTFTn3DPQH3glHTVfcMiVUGlH52klITZOrqRDFqh0lfS36G5R5ZQ1xs6FCNamQuMzrUKHPo7szjTGeGRfbuaAN0rvrkwFQOAoMm0Dn+Q7oUDqf7kjix+dJWyq9FFO1ElaihHB25V7GkGsYzhVXdCJrYE7w38iErXxMlRQP5Hf+msXvtvNYDn0Ez7AJejysl0vyRrSbWy4o9Emv7w5Nq2rZ2b59NEZMYM/WDoiSPg63ptoXF1Nj7nwEhkvwzF20QfMDOsGjQ/p0D3q5Ok/OErhVvZkzan/34OugmZbI30jR2E+ck8+FjArJ0HO2B2JGxCJVZ2X5TCB4YH2vuItg0tysFBy+P7MaesewhTEZ7m/ZsJz43B1/G48XYaZFok2HgaQBaZNlUklLlMUnkC0wWH8jeZeXetAp1xM28IBFM1569Z/LfAQMEsvfeTdxb0I18ertP100+pU80jFHQZmP0zc2qC2tLxTYukqV1eyzMzqP/kCmWvjZu3TTwaO1DruPJar+Im0e5DQDZr2Ec5m+Hl2J5zv4qdFJEFnyCZWRmM6E7Yw+7cHTrwWOB7IrrYtR9wRfHspYo3JOK3HKq5yI5ciJTx9AJJiWVZDJ8eWmZrEAwIHYxeWScyirXSPP0bHhsDtMAK0BysYPik5maKG6P0fub2kEmJvSetJsG0Ronr0sFFDa5I56QKAStzZHD/g9rlC3G6aiDYiOP9Dm7VgJrXvgY3U8EQgyHdBa4PJeYCsHmpzil2lJu8qwhKCrInB3IltQ2Tay39bfZKIxsGAyVM1eWXrUOjnqHAlxKW7Ze6nQyoo11Ed02ZqU7x2IFN879yYIHPku/IIlQb5aw0vayzZbLtJAwASXZ7rdcxXgcqegpl0AfP5UMUeaSyhJSDZIZpAceNAAPGoN8dobFDVuuXePTaFEBe40UvEtGw2cpbO/jAmVDAVcsBC8CQ3LzWqED5GhmH6D3IF4hUVTVRwQ7xEilD5bItfRNubzzxqImsEin0y/4ga6Z4GXn2LcLmJp1dxa+2Y/ULxiBS/frq8caO1lZO52nQWrwt6Ba7nENxsNvPXDxlcNqIs3D7n72tvLRmdnqzarQosubSUl+Ig3jyvqT8fY/zZiNGEgoSVB6Q51ahjlmhrccbqEn8/oe+cooIakuqkh+5fcvsdQkTOZ2WiQYfULj+7s68alQN40hPMwAADpSCFv9XUl5SiU3hllHJGszMS2WMSzpaQWYllEkBaofXIuFjQEnKWtTSYa7GRjFtTpmNIJYmoJRl+WIt8tNTLZoIo2+j3H1y/dS//XliI+2jieXKHuc5IndMCCWKr9KrUoPuKxJ9QcEAQd7tc4wS3ujbAj5/tF8Tsa4vwmHZ8ZQESdsh/EOy9op2RO3dbJsOXxAw2gA+7lvNFTyje5yc84TbMzqnH3ZWCm+YYehWkGbVzzlJ5yG96gCEh3qqVz8bA/a+hFZ4A6mMbxTn7OCa07mj9BhSEhobIzMdnx8tMupWQD4swiHSC+coyQk8YzG6ObTuKNskXtaCWCdfXO0aXMVi6XxTZ7fFFJb5R9OZzZTEvMfoDBEbtwUsRckoX2SndfQ2iW/6kqmvtBwB4u5Q5Kuj6TeA3zqjQaKwWDV3T4hiZmUOIsR1G7oXmWHj6Ev+yd6CrbLszcxwN3iqV+VdlnrD+J100hmf9Qew43JA0k3wrQFzXZiRo3OEPMQOYO0bpmH1cRw+9EOioMbYgWsNc6gtbQnSz8u2r7CQVIEzm2SeEJv1QIqpAP2cscIno8nJTaTnKThHVcEmLZAwtt8IjPFsLsQr3FWAtaBJ58YZOL1dboRi0d7SvZUtAl55S+ok1WreXeLQ44F0RPKcmL4HEryhYO6glyGC/b7vuoji9YGs4RgAAAAAAAAAAAAA=";
+
 const games = [
   { date: "SEP 3", title: "Season Opener", meta: "Opponent / location TBD" },
   { date: "SEP 10", title: "Region Match", meta: "Opponent / location TBD" },
@@ -12,8 +14,8 @@ export default function Home() {
       <header className="topbar">
         <div className="container nav">
           <a className="brand" href="#home">
-            <span className="brand-mark" aria-hidden="true"></span>
-            <span>WX PICKLEBALL</span>
+            <img className="brand-logo" src={LOGO} alt="WX Pickleball logo" />
+            <div className="brand-copy"><strong>WX PICKLEBALL</strong><span>Woods Cross High School</span></div>
           </a>
           <nav className="navlinks">
             <a href="#team">Team</a>
@@ -22,92 +24,68 @@ export default function Home() {
             <a href="#sponsors">Sponsors</a>
             <a href="#contact">Contact</a>
           </nav>
+          <a className="nav-cta" href="#contact">JOIN / SUPPORT</a>
         </div>
       </header>
 
       <main>
         <section className="hero" id="home">
-          <div className="container hero-inner">
-            <div className="kicker">Woods Cross High School Pickleball</div>
-            <h1>COMPETE.<br/>IMPROVE.<br/>REPRESENT.</h1>
-            <p>
-              Building a competitive high-school pickleball program around
-              skill, sportsmanship, team culture, and a whole lot of fun.
-            </p>
-            <div className="actions">
-              <a className="btn btn-primary" href="#team">Meet the Team</a>
-              <a className="btn btn-secondary" href="#schedule">View Schedule</a>
+          <div className="container hero-grid">
+            <div className="hero-inner">
+              <div className="kicker">Woods Cross High School Pickleball</div>
+              <h1>PLAY TOGETHER.<br/>COMPETE TO WIN.</h1>
+              <p>One team. One program. A home for Woods Cross pickleball players, families, schedules, results, tournaments, and sponsors.</p>
+              <div className="actions">
+                <a className="btn btn-primary" href="#schedule">View Schedule</a>
+                <a className="btn btn-secondary" href="#team">Meet the Team</a>
+              </div>
             </div>
+            <div className="hero-logo-wrap">
+              <img className="hero-logo" src={LOGO} alt="WX Pickleball wildcat logo" />
+            </div>
+          </div>
+        </section>
+
+        <section className="quick-strip">
+          <div className="container quick-grid">
+            <div><strong>TEAM</strong><span>Varsity + JV</span></div>
+            <div><strong>SEASON</strong><span>2026</span></div>
+            <div><strong>HOME</strong><span>Woods Cross, Utah</span></div>
+            <div><strong>PROGRAM</strong><span>Compete • Improve • Represent</span></div>
           </div>
         </section>
 
         <section className="section" id="team">
           <div className="container">
-            <div className="kicker">2026 Season</div>
-            <h2>Built to compete.</h2>
-            <p className="section-lead">
-              WX Pickleball brings Woods Cross students together to develop
-              competitive skills, represent the school, and grow the sport.
-              This site will become the central hub for rosters, results,
-              announcements, tournament information, and team resources.
-            </p>
-
+            <div className="kicker">The Program</div>
+            <h2>Built to compete. Built together.</h2>
+            <p className="section-lead">WX Pickleball brings Woods Cross students together to develop skill, sportsmanship, confidence, and a team culture that represents the school well on and off the court.</p>
             <div className="grid grid-3" style={{marginTop: 36}}>
-              <div className="card">
-                <div className="metric">01</div>
-                <h3>Team</h3>
-                <p>Varsity and JV rosters, player profiles, captains, and coaches.</p>
-              </div>
-              <div className="card">
-                <div className="metric">02</div>
-                <h3>Competition</h3>
-                <p>Match schedules, tournament brackets, standings, and results.</p>
-              </div>
-              <div className="card">
-                <div className="metric">03</div>
-                <h3>Community</h3>
-                <p>Sponsors, fundraisers, alumni, families, and program supporters.</p>
-              </div>
+              <div className="card"><div className="metric">01</div><h3>Compete</h3><p>Varsity and JV players preparing to win points, matches, and tournaments.</p></div>
+              <div className="card"><div className="metric">02</div><h3>Improve</h3><p>Better technique, smarter strategy, stronger partnerships, and consistent reps.</p></div>
+              <div className="card"><div className="metric">03</div><h3>Represent</h3><p>Play hard, show class, support teammates, and represent Woods Cross with pride.</p></div>
             </div>
           </div>
         </section>
 
         <section className="section dark" id="tournaments">
           <div className="container">
-            <div className="kicker">Events</div>
-            <h2>Tournaments that feel like events.</h2>
-            <p className="section-lead">
-              Registration, divisions, brackets, court assignments, live results,
-              and fundraising information can all live here instead of being spread
-              across forms, texts, and separate links.
-            </p>
-
+            <div className="kicker red">Tournament Central</div>
+            <h2>Everything players need on game day.</h2>
+            <p className="section-lead">Registration, divisions, brackets, court assignments, results, and fundraiser information can all live in one place.</p>
             <div className="grid grid-3" style={{marginTop: 36}}>
-              <div className="card">
-                <h3>Fundraiser Tournament</h3>
-                <p>One home for registration, payment instructions, brackets, and day-of updates.</p>
-              </div>
-              <div className="card">
-                <h3>Live Brackets</h3>
-                <p>A clean tournament view that players and parents can check from their phones.</p>
-              </div>
-              <div className="card">
-                <h3>Results Archive</h3>
-                <p>Keep past champions, podium finishes, and event photos on the site year after year.</p>
-              </div>
+              <div className="card"><h3>Fundraiser Tournament</h3><p>Registration, payment instructions, brackets, and day-of updates.</p></div>
+              <div className="card"><h3>Live Brackets</h3><p>A simple mobile-first bracket view for players, parents, and spectators.</p></div>
+              <div className="card"><h3>Results Archive</h3><p>Champions, podium finishes, match results, and event history year after year.</p></div>
             </div>
           </div>
         </section>
 
-        <section className="section" id="schedule">
+        <section className="section schedule-section" id="schedule">
           <div className="container">
-            <div className="kicker">Schedule</div>
-            <h2>Know where to be.</h2>
-            <p className="section-lead">
-              These are placeholders for now. Once you give me the official schedule,
-              I’ll replace these with the real matches and locations.
-            </p>
-
+            <div className="kicker">Upcoming</div>
+            <h2>Match schedule.</h2>
+            <p className="section-lead">We’ll drop the official season schedule here next. For now, these are placeholders showing the layout.</p>
             <div className="schedule">
               {games.map((g) => (
                 <div className="game" key={g.date + g.title}>
@@ -121,39 +99,24 @@ export default function Home() {
         </section>
 
         <section className="section dark" id="sponsors">
-          <div className="container">
-            <div className="kicker">Support WX</div>
-            <h2>Sponsors make the season bigger.</h2>
-            <p className="section-lead">
-              We can create sponsor tiers, logo placements, fundraising links,
-              and a dedicated sponsor page that gives local businesses meaningful visibility.
-            </p>
+          <div className="container sponsor-grid">
+            <div><div className="kicker red">Support WX</div><h2>Sponsors make the season bigger.</h2><p className="section-lead">Local partners help create better events, stronger fundraising, and more opportunities for our players.</p></div>
+            <img className="sponsor-logo" src={LOGO} alt="WX Pickleball logo" />
           </div>
         </section>
 
         <section className="section" id="contact">
           <div className="container">
             <div className="cta">
-              <div>
-                <h3>Ready to play or support WX?</h3>
-                <p>
-                  Registration, volunteer, sponsor, and contact buttons will live here.
-                  We’ll connect them to the exact forms and payment links you want.
-                </p>
-              </div>
-              <a className="btn" style={{background:"#0b1f33", color:"white"}} href="mailto:">
-                Contact WX Pickleball
-              </a>
+              <div><div className="kicker dark-kicker">WX PICKLEBALL</div><h3>Ready to play or support the team?</h3><p>Registration, volunteer, sponsor, and contact links will live right here.</p></div>
+              <a className="btn cta-btn" href="mailto:">Contact WX Pickleball</a>
             </div>
           </div>
         </section>
       </main>
 
       <footer className="footer">
-        <div className="container footer-inner">
-          <span>WX Pickleball • Woods Cross, Utah</span>
-          <span>Built for players, families, and fans.</span>
-        </div>
+        <div className="container footer-inner"><span>© 2026 WX Pickleball • Woods Cross, Utah</span><span>Compete • Improve • Represent</span></div>
       </footer>
     </>
   );
