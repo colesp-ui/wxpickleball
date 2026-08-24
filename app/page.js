@@ -1,6 +1,6 @@
 import "./globals.css";
 
-const LOGO = "/ChatGPT Image Aug 23, 2026, 12_12_32 AM.png";
+const LOGO = "/Logo.png";
 
 const games = [
   { date: "SEP 29", day: "TUE", year: "2026", time: "8:00 PM - 10:00 PM", title: "Open Play Evaluations", location: "Washington Park", players: "ALL" },
