@@ -90,6 +90,12 @@ export default function RootLayout({ children }) {
           function placeSections() {
             var meetFormat = document.getElementById('meet-format');
             var schedule = document.getElementById('schedule');
+            if (schedule && !window.__wxScheduleInitialized) {
+              document.querySelectorAll('#schedule .schedule-block').forEach(function (block) {
+                block.removeAttribute('open');
+              });
+              window.__wxScheduleInitialized = true;
+            }
             if (meetFormat && schedule && schedule.parentNode && meetFormat.nextElementSibling !== schedule) {
               meetFormat.style.display = '';
               schedule.parentNode.insertBefore(meetFormat, schedule);
