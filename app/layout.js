@@ -103,10 +103,7 @@ export default function RootLayout({ children }) {
               meetFormat.style.display = 'none';
             }
             var fundraiser = document.getElementById('fundraiser');
-            var main = document.querySelector('main');
-            if (fundraiser && main && main.lastElementChild !== fundraiser) {
-              main.appendChild(fundraiser);
-            }
+            if (fundraiser) fundraiser.remove();
 
             var contact = document.getElementById('contact');
             if (contact) {
