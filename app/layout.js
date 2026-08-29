@@ -101,6 +101,23 @@ export default function RootLayout({ children }) {
             if (fundraiser && main && main.lastElementChild !== fundraiser) {
               main.appendChild(fundraiser);
             }
+
+            var contact = document.getElementById('contact');
+            if (contact && !document.getElementById('groupme-contact-link')) {
+              var contactCta = contact.querySelector('.cta');
+              var contactCopy = contact.querySelector('.cta p');
+              if (contactCopy) contactCopy.textContent = 'Questions, team information, and real-time updates all live here.';
+              if (contactCta) {
+                var groupMe = document.createElement('a');
+                groupMe.id = 'groupme-contact-link';
+                groupMe.className = 'btn cta-btn';
+                groupMe.href = 'https://groupme.com/join_group/109853728/BgH41V2x';
+                groupMe.target = '_blank';
+                groupMe.rel = 'noopener noreferrer';
+                groupMe.textContent = 'Join the GroupMe';
+                contactCta.appendChild(groupMe);
+              }
+            }
           }
           if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', function () { setTimeout(placeSections, 250); });
