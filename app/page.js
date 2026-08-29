@@ -71,7 +71,7 @@ const FocusIcon = ({ type }) => {
 
 function ScheduleTable({ group }) {
   return (
-    <details className={`schedule-block ${group.className}`} open>
+    <details className={`schedule-block ${group.className}`}>
       <summary className="schedule-team-title" style={{cursor:"pointer",listStyle:"none",display:"flex",alignItems:"center",justifyContent:"space-between",gap:20}}>
         <span>{group.name}</span>
         <span className="schedule-toggle" aria-hidden="true"><span className="toggle-label toggle-label-open">Collapse</span><span className="toggle-label toggle-label-closed">Expand</span><svg className="schedule-chevron" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
