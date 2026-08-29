@@ -4,6 +4,7 @@ const LOGO = "/Logo.png";
 const photos = ["/IMG_2067.jpeg", "/IMG_2072.jpeg", "/IMG_2090.jpeg", "/IMG_2092.jpeg"];
 const REGISTRATION_URL = "https://docs.google.com/forms/d/e/1FAIpQLScYDjj9CJMCelDYZaMjmk3iaEIU6dSIonE3viC4NbuSsJCNsw/viewform?usp=header";
 const PAYMENT_URL = "https://venmo.com/code?user_id=4634788421961710994&created=1788029199.874104&printed=1";
+const GROUPME_URL = "https://groupme.com/join_group/109853728/BgH41V2x";
 
 export default function TournamentPage() {
   return (
@@ -24,7 +25,7 @@ export default function TournamentPage() {
 
         <section className="tournament-gallery section" id="photos"><div className="container"><div className="kicker">WX Pickleball</div><h2>Come be part of it.</h2><div className="tournament-photo-grid">{photos.map((photo, i) => <figure key={photo} className={i === 0 ? "wide" : ""}><img src={photo} alt="WX Pickleball tournament" /></figure>)}</div></div></section>
 
-        <section className="section tournament-register" id="register"><div className="container"><div className="tournament-register-box"><img src={LOGO} alt="WX Pickleball"/><div><div className="kicker dark-kicker">Support WX Pickleball</div><h2>Ready to play?</h2><p>Grab your partner, register your team, then submit your tournament payment through Venmo.</p></div><div className="actions"><a className="btn cta-btn" href={REGISTRATION_URL} target="_blank" rel="noopener noreferrer">Register Your Team</a><a className="btn btn-secondary" href={PAYMENT_URL} target="_blank" rel="noopener noreferrer">Pay with Venmo</a></div></div></div></section>
+        <section className="section tournament-register" id="register"><div className="container"><div className="tournament-register-box"><img src={LOGO} alt="WX Pickleball"/><div><div className="kicker dark-kicker">Support WX Pickleball</div><h2>Ready to play?</h2><p>Register your team, submit your tournament payment, and join the GroupMe for real-time chat, results, and tournament info.</p></div><div className="actions"><a className="btn cta-btn" href={REGISTRATION_URL} target="_blank" rel="noopener noreferrer">Register Your Team</a><a className="btn btn-secondary" href={PAYMENT_URL} target="_blank" rel="noopener noreferrer">Pay with Venmo</a><a className="btn btn-secondary" href={GROUPME_URL} target="_blank" rel="noopener noreferrer">Join the GroupMe</a></div></div></div></section>
       </main>
       <footer className="footer"><div className="container footer-inner"><span>© 2026 WX Pickleball • Woods Cross, Utah</span><a href="/">Back to WX Pickleball</a></div></footer>
     </>
