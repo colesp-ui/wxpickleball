@@ -87,6 +87,14 @@ export default function RootLayout({ children }) {
             var menu = link.closest('details.site-menu');
             if (menu) menu.removeAttribute('open');
           });
+
+          (function () {
+            var meetFormat = document.getElementById('meet-format');
+            var schedule = document.getElementById('schedule');
+            if (meetFormat && schedule && schedule.parentNode) {
+              schedule.parentNode.insertBefore(meetFormat, schedule);
+            }
+          })();
         `}} />
       </body>
     </html>
