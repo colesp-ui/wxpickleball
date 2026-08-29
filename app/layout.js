@@ -12,10 +12,10 @@ function MeetFormatSection() {
         <p className="meet-intro">Each meet is played as a team in MLP-style format.</p>
         <div className="meet-equation">1 MEET <strong>=</strong> 4 MATCHES</div>
         <div className="meet-match-grid">
-          <div className="meet-match"><div className="meet-num">01</div><h3>Boys Doubles</h3></div>
-          <div className="meet-match"><div className="meet-num">02</div><h3>Girls Doubles</h3></div>
-          <div className="meet-match"><div className="meet-num">03</div><h3>Mixed 1</h3></div>
-          <div className="meet-match"><div className="meet-num">04</div><h3>Mixed 2</h3></div>
+          <div className="meet-match"><div className="meet-num">Match 1</div><h3>Boys Doubles</h3></div>
+          <div className="meet-match"><div className="meet-num">Match 2</div><h3>Girls Doubles</h3></div>
+          <div className="meet-match"><div className="meet-num">Match 3</div><h3>Mixed 1</h3></div>
+          <div className="meet-match"><div className="meet-num">Match 4</div><h3>Mixed 2</h3></div>
         </div>
         <div className="match-rules">
           <div className="match-rule"><span className="match-rule-label">How a match is won</span><span className="match-rule-value">Win <em>2 of 3</em> Games</span></div>
