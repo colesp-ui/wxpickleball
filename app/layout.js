@@ -11,21 +11,18 @@ function MeetFormatSection() {
         <h2>Meet Format</h2>
         <p className="meet-intro">Each meet is played as a team in MLP-style format.</p>
         <div className="meet-equation">1 MEET <strong>=</strong> 4 MATCHES</div>
-
         <div className="meet-match-grid">
           <div className="meet-match"><div className="meet-num">01</div><h3>Boys Doubles</h3></div>
           <div className="meet-match"><div className="meet-num">02</div><h3>Girls Doubles</h3></div>
           <div className="meet-match"><div className="meet-num">03</div><h3>Mixed 1</h3></div>
           <div className="meet-match"><div className="meet-num">04</div><h3>Mixed 2</h3></div>
         </div>
-
         <div className="match-rules">
           <div className="match-rule"><span className="match-rule-label">How a match is won</span><span className="match-rule-value">Best <em>2 of 3</em></span></div>
           <div className="match-rule"><span className="match-rule-label">Games to</span><span className="match-rule-value"><em>11</em></span></div>
           <div className="match-rule"><span className="match-rule-label">Win by</span><span className="match-rule-value"><em>2</em></span></div>
           <div className="match-rule"><span className="match-rule-label">Result</span><span className="match-rule-value">Win the Match</span></div>
         </div>
-
         <div className="dreambreaker">
           <div>
             <div className="dream-title">⚡ DreamBreaker</div>
@@ -38,7 +35,6 @@ function MeetFormatSection() {
             <div className="dream-stat"><span>Cap at</span><strong>25</strong></div>
           </div>
         </div>
-
         <p className="meet-tagline">Team competition. High energy. Every point matters.</p>
       </div>
     </section>
@@ -88,13 +84,20 @@ export default function RootLayout({ children }) {
             if (menu) menu.removeAttribute('open');
           });
 
-          (function () {
+          function placeMeetFormat() {
             var meetFormat = document.getElementById('meet-format');
             var schedule = document.getElementById('schedule');
-            if (meetFormat && schedule && schedule.parentNode) {
+            if (meetFormat && schedule && schedule.parentNode && meetFormat.nextElementSibling !== schedule) {
               schedule.parentNode.insertBefore(meetFormat, schedule);
             }
-          })();
+          }
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', function () { setTimeout(placeMeetFormat, 250); });
+          } else {
+            setTimeout(placeMeetFormat, 250);
+          }
+          window.addEventListener('load', placeMeetFormat);
+          setTimeout(placeMeetFormat, 1000);
         `}} />
       </body>
     </html>
