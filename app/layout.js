@@ -84,20 +84,25 @@ export default function RootLayout({ children }) {
             if (menu) menu.removeAttribute('open');
           });
 
-          function placeMeetFormat() {
+          function placeSections() {
             var meetFormat = document.getElementById('meet-format');
             var schedule = document.getElementById('schedule');
             if (meetFormat && schedule && schedule.parentNode && meetFormat.nextElementSibling !== schedule) {
               schedule.parentNode.insertBefore(meetFormat, schedule);
             }
+            var fundraiser = document.getElementById('fundraiser');
+            var main = document.querySelector('main');
+            if (fundraiser && main && main.lastElementChild !== fundraiser) {
+              main.appendChild(fundraiser);
+            }
           }
           if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', function () { setTimeout(placeMeetFormat, 250); });
+            document.addEventListener('DOMContentLoaded', function () { setTimeout(placeSections, 250); });
           } else {
-            setTimeout(placeMeetFormat, 250);
+            setTimeout(placeSections, 250);
           }
-          window.addEventListener('load', placeMeetFormat);
-          setTimeout(placeMeetFormat, 1000);
+          window.addEventListener('load', placeSections);
+          setTimeout(placeSections, 1000);
         `}} />
       </body>
     </html>
