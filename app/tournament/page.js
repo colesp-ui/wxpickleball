@@ -2,16 +2,17 @@ import "../globals.css";
 
 const LOGO = "/Logo.png";
 const photos = ["/IMG_2067.jpeg", "/IMG_2072.jpeg", "/IMG_2090.jpeg", "/IMG_2092.jpeg"];
+const REGISTRATION_URL = "https://docs.google.com/forms/d/e/1FAIpQLScYDjj9CJMCelDYZaMjmk3iaEIU6dSIonE3viC4NbuSsJCNsw/viewform?usp=header";
 
 export default function TournamentPage() {
   return (
     <>
-      <header className="topbar"><div className="container nav"><a className="brand" href="/"><img className="brand-logo" src={LOGO} alt="WX Pickleball logo" /><div className="brand-copy"><strong>WX PICKLEBALL</strong><span>Woods Cross High School</span></div></a><nav className="navlinks"><a href="/">Home</a><a href="#details">Details</a><a href="#format">Format</a><a href="#photos">Photos</a></nav><a className="nav-cta" href="#register">REGISTER</a></div></header>
+      <header className="topbar"><div className="container nav"><a className="brand" href="/"><img className="brand-logo" src={LOGO} alt="WX Pickleball logo" /><div className="brand-copy"><strong>WX PICKLEBALL</strong><span>Woods Cross High School</span></div></a><nav className="navlinks"><a href="/">Home</a><a href="#details">Details</a><a href="#format">Format</a><a href="#photos">Photos</a></nav><a className="nav-cta" href={REGISTRATION_URL} target="_blank" rel="noopener noreferrer">REGISTER</a></div></header>
       <main className="tournament-page">
         <section className="tournament-hero">
           <img className="tournament-hero-image" src="/IMG_2067.jpeg" alt="WX Pickleball fundraising tournament" />
           <div className="tournament-hero-overlay" />
-          <div className="container tournament-hero-content"><div className="kicker red">WX Pickleball Fundraiser</div><h1>FUNDRAISING<br/>TOURNAMENT</h1><p>Compete. Have fun. Support Woods Cross High School Pickleball.</p><div className="actions"><a className="btn btn-primary" href="#register">Register Your Team</a><a className="btn btn-secondary" href="#details">Tournament Details</a></div></div>
+          <div className="container tournament-hero-content"><div className="kicker red">WX Pickleball Fundraiser</div><h1>FUNDRAISING<br/>TOURNAMENT</h1><p>Compete. Have fun. Support Woods Cross High School Pickleball.</p><div className="actions"><a className="btn btn-primary" href={REGISTRATION_URL} target="_blank" rel="noopener noreferrer">Register Your Team</a><a className="btn btn-secondary" href="#details">Tournament Details</a></div></div>
         </section>
 
         <section className="tournament-facts" id="details"><div className="container tournament-facts-grid"><div><span>Date</span><strong>August 22</strong></div><div><span>Time</span><strong>8 AM – 12 PM</strong></div><div><span>Location</span><strong>Hogan Park</strong></div><div><span>Divisions</span><strong>Two Competitive Levels</strong></div></div></section>
@@ -22,7 +23,7 @@ export default function TournamentPage() {
 
         <section className="tournament-gallery section" id="photos"><div className="container"><div className="kicker">WX Pickleball</div><h2>Come be part of it.</h2><div className="tournament-photo-grid">{photos.map((photo, i) => <figure key={photo} className={i === 0 ? "wide" : ""}><img src={photo} alt="WX Pickleball tournament" /></figure>)}</div></div></section>
 
-        <section className="section tournament-register" id="register"><div className="container"><div className="tournament-register-box"><img src={LOGO} alt="WX Pickleball"/><div><div className="kicker dark-kicker">Support WX Pickleball</div><h2>Ready to play?</h2><p>Registration and payment links will be posted here. Get your partner ready.</p></div><a className="btn cta-btn" href="#">Registration Coming Soon</a></div></div></section>
+        <section className="section tournament-register" id="register"><div className="container"><div className="tournament-register-box"><img src={LOGO} alt="WX Pickleball"/><div><div className="kicker dark-kicker">Support WX Pickleball</div><h2>Ready to play?</h2><p>Grab your partner and register your team for the WX Pickleball Fundraising Tournament.</p></div><a className="btn cta-btn" href={REGISTRATION_URL} target="_blank" rel="noopener noreferrer">Register Your Team</a></div></div></section>
       </main>
       <footer className="footer"><div className="container footer-inner"><span>© 2026 WX Pickleball • Woods Cross, Utah</span><a href="/">Back to WX Pickleball</a></div></footer>
     </>
