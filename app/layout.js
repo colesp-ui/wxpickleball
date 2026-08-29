@@ -91,7 +91,10 @@ export default function RootLayout({ children }) {
             var meetFormat = document.getElementById('meet-format');
             var schedule = document.getElementById('schedule');
             if (meetFormat && schedule && schedule.parentNode && meetFormat.nextElementSibling !== schedule) {
+              meetFormat.style.display = '';
               schedule.parentNode.insertBefore(meetFormat, schedule);
+            } else if (meetFormat && !schedule) {
+              meetFormat.style.display = 'none';
             }
             var fundraiser = document.getElementById('fundraiser');
             var main = document.querySelector('main');
