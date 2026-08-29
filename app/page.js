@@ -56,11 +56,11 @@ const scheduleGroups = [
 ];
 
 const FocusIcon = ({ type }) => {
-  const common = { width: 42, height: 42, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.9, strokeLinecap: "round", strokeLinejoin: "round", "aria-hidden": true };
-  if (type === "development") return <svg {...common}><path d="M6.5 7.5h11M6.5 16.5h11M4 9.5v5M20 9.5v5M2.5 10.5v3M21.5 10.5v3" /></svg>;
-  if (type === "character") return <svg {...common}><circle cx="9" cy="8" r="3" /><path d="M3.5 18c.8-3.1 2.7-5 5.5-5s4.7 1.9 5.5 5" /><circle cx="17" cy="9" r="2.3" /><path d="M14.8 14.3c.8-.9 1.8-1.3 3-1.3 2 0 3.4 1.3 3.9 3.6" /></svg>;
-  if (type === "competition") return <svg {...common}><path d="M8 4h8v3c0 4-1.8 6-4 6s-4-2-4-6V4Z" /><path d="M8 6H5.5C5.2 9 6.3 11 9 11.5M16 6h2.5c.3 3- .8 5-3.5 5.5M12 13v4M8.5 20h7M10 17h4" /></svg>;
-  return <svg {...common}><circle cx="12" cy="12" r="9" /><path d="M8.5 14.5c1 1.3 2.2 2 3.5 2s2.5-.7 3.5-2M9 9.5h.01M15 9.5h.01" /></svg>;
+  const common = { width: 42, height: 42, viewBox: "0 0 24 24", "aria-hidden": true };
+  if (type === "development") return <svg {...common}><g fill="currentColor"><rect x="2" y="9" width="3" height="6" rx="1"/><rect x="5" y="7" width="3" height="10" rx="1"/><rect x="8" y="11" width="8" height="2" rx="1"/><rect x="16" y="7" width="3" height="10" rx="1"/><rect x="19" y="9" width="3" height="6" rx="1"/></g></svg>;
+  if (type === "character") return <svg {...common}><g fill="currentColor"><circle cx="12" cy="7" r="3"/><circle cx="5.5" cy="9" r="2.2"/><circle cx="18.5" cy="9" r="2.2"/><path d="M6.5 20c.2-4.4 2.2-7 5.5-7s5.3 2.6 5.5 7H6.5Z"/><path d="M1.5 19c.1-3.2 1.6-5.2 4-5.2 1.1 0 2 .4 2.8 1.1-.8 1.2-1.3 2.6-1.4 4.1H1.5Z"/><path d="M22.5 19c-.1-3.2-1.6-5.2-4-5.2-1.1 0-2 .4-2.8 1.1.8 1.2 1.3 2.6 1.4 4.1h5.4Z"/></g></svg>;
+  if (type === "competition") return <svg {...common}><g fill="currentColor"><path d="M7 3h10v3.7c0 3.7-2.1 6.4-5 6.4s-5-2.7-5-6.4V3Z"/><path d="M5.8 5H3v1.4c0 3.5 1.8 5.7 5 6.2V10C6.5 9.5 5.8 8.4 5.8 6.6V5Z"/><path d="M18.2 5H21v1.4c0 3.5-1.8 5.7-5 6.2V10c1.5-.5 2.2-1.6 2.2-3.4V5Z"/><rect x="10.8" y="12" width="2.4" height="5"/><rect x="8" y="17" width="8" height="2" rx="1"/><rect x="6.5" y="19" width="11" height="2" rx="1"/></g></svg>;
+  return <svg {...common} fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r=".8" fill="currentColor" stroke="none"/><circle cx="15" cy="10" r=".8" fill="currentColor" stroke="none"/><path d="M8.5 14c.9 1.5 2.1 2.3 3.5 2.3s2.6-.8 3.5-2.3"/></svg>;
 };
 
 function ScheduleTable({ group }) {
@@ -86,7 +86,7 @@ function ScheduleTable({ group }) {
 }
 
 export default function Home() {
-  const iconStyle = { color: "#e51f35", marginBottom: 16, display: "flex", alignItems: "center" };
+  const iconStyle = { color: "#e51f35", marginBottom: 18, display: "flex", alignItems: "center" };
   return (
     <>
       <header className="topbar"><div className="container nav"><a className="brand" href="#home"><img className="brand-logo" src={LOGO} alt="WX Pickleball logo" /><div className="brand-copy"><strong>WX PICKLEBALL</strong><span>Woods Cross High School</span></div></a><nav className="navlinks"><a href="#team">Team</a><a href="#schedule">Schedule</a><a href="#tournaments">Tournaments</a><a href="#contact">Contact</a></nav><a className="nav-cta" href="#contact">JOIN / SUPPORT</a></div></header>
