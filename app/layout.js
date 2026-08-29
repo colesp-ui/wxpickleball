@@ -23,6 +23,7 @@ function MeetFormatSection() {
           <div className="match-rule"><span className="match-rule-label">Win by</span><span className="match-rule-value"><em>2</em></span></div>
           <div className="match-rule"><span className="match-rule-label">Result</span><span className="match-rule-value">Win the Match</span></div>
         </div>
+        <div className="meet-win-bar">Win 3 Matches <strong>=</strong> Win the Meet</div>
         <div className="dreambreaker">
           <div>
             <div className="dream-title">⚡ DreamBreaker</div>
@@ -64,6 +65,8 @@ export default function RootLayout({ children }) {
           .match-rule-label{font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#657487}
           .match-rule-value{font-size:26px;font-weight:900;color:#071c31;margin-top:4px}
           .match-rule-value em{font-style:normal;color:#e51f35}
+          .meet-win-bar{background:#071c31;color:#fff;border-radius:14px;padding:20px 28px;text-align:center;font-size:clamp(22px,2.8vw,34px);font-weight:900;letter-spacing:-.02em;margin-top:24px}
+          .meet-win-bar strong{color:#e51f35}
           .dreambreaker{margin-top:24px;background:linear-gradient(135deg,#b80f22,#e51f35);color:#fff;border-radius:16px;padding:32px;display:grid;grid-template-columns:1.4fr 1fr;gap:30px;align-items:center}
           .dream-title{font-size:clamp(32px,4vw,52px);font-weight:900;letter-spacing:-.035em;margin:0 0 6px}
           .dream-sub{font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;color:#ffd9dd;margin-bottom:16px}
@@ -74,7 +77,7 @@ export default function RootLayout({ children }) {
           .dream-stat strong{display:block;font-size:34px;margin-top:4px}
           .meet-tagline{text-align:center;margin:25px 0 0;font-size:14px;font-weight:900;letter-spacing:.09em;text-transform:uppercase;color:#071c31}
           @media(max-width:800px){.meet-match-grid{grid-template-columns:1fr 1fr}.match-rules{grid-template-columns:1fr 1fr}.match-rule:nth-child(2){border-right:0}.match-rule:nth-child(-n+2){border-bottom:1px solid #d9e0e7}.dreambreaker{grid-template-columns:1fr}.dream-stats{max-width:500px}}
-          @media(max-width:560px){.meet-format-section{padding:70px 0}.meet-match-grid{gap:10px}.meet-match{padding:19px 10px}.meet-match h3{font-size:17px}.meet-equation{padding:17px 12px}.match-rule{padding:17px 10px;text-align:center}.match-rule-value{font-size:21px}.dreambreaker{padding:25px 20px}.dream-stats{gap:7px}.dream-stat{padding:15px 5px}.dream-stat strong{font-size:27px}.dream-copy{font-size:15px}}
+          @media(max-width:560px){.meet-format-section{padding:70px 0}.meet-match-grid{gap:10px}.meet-match{padding:19px 10px}.meet-match h3{font-size:17px}.meet-equation{padding:17px 12px}.match-rule{padding:17px 10px;text-align:center}.match-rule-value{font-size:21px}.meet-win-bar{padding:17px 12px}.dreambreaker{padding:25px 20px}.dream-stats{gap:7px}.dream-stat{padding:15px 5px}.dream-stat strong{font-size:27px}.dream-copy{font-size:15px}}
         `}</style>
         <script dangerouslySetInnerHTML={{__html: `
           document.addEventListener('click', function (event) {
