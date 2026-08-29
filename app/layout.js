@@ -103,11 +103,16 @@ export default function RootLayout({ children }) {
             }
 
             var contact = document.getElementById('contact');
-            if (contact && !document.getElementById('groupme-contact-link')) {
+            if (contact) {
               var contactCta = contact.querySelector('.cta');
               var contactCopy = contact.querySelector('.cta p');
+              var contactButton = contact.querySelector('.cta > a');
               if (contactCopy) contactCopy.textContent = 'Questions, team information, and real-time updates all live here.';
-              if (contactCta) {
+              if (contactButton) {
+                contactButton.href = 'sms:+18017921100';
+                contactButton.textContent = 'Text 801-792-1100';
+              }
+              if (contactCta && !document.getElementById('groupme-contact-link')) {
                 var groupMe = document.createElement('a');
                 groupMe.id = 'groupme-contact-link';
                 groupMe.className = 'btn cta-btn';
