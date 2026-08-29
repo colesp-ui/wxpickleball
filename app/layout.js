@@ -18,7 +18,7 @@ function MeetFormatSection() {
           <div className="meet-match"><div className="meet-num">04</div><h3>Mixed 2</h3></div>
         </div>
         <div className="match-rules">
-          <div className="match-rule"><span className="match-rule-label">How a match is won</span><span className="match-rule-value">Best <em>2 of 3</em></span></div>
+          <div className="match-rule"><span className="match-rule-label">How a match is won</span><span className="match-rule-value">Win <em>2 of 3</em> Games</span></div>
           <div className="match-rule"><span className="match-rule-label">Games to</span><span className="match-rule-value"><em>11</em></span></div>
           <div className="match-rule"><span className="match-rule-label">Win by</span><span className="match-rule-value"><em>2</em></span></div>
           <div className="match-rule"><span className="match-rule-label">Result</span><span className="match-rule-value">Win the Match</span></div>
