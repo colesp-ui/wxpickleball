@@ -6,7 +6,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <script dangerouslySetInnerHTML={{__html: `
+          document.addEventListener('click', function (event) {
+            var link = event.target.closest('.site-menu-panel a');
+            if (!link) return;
+            var menu = link.closest('details.site-menu');
+            if (menu) menu.removeAttribute('open');
+          });
+        `}} />
+      </body>
     </html>
   );
 }
