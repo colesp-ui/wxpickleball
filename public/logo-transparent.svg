@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
   <defs>
-    <filter id="removeWhite" color-interpolation-filters="sRGB">
-      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  -0.2126 -0.7152 -0.0722 0 1"/>
-    </filter>
+    <clipPath id="circleCrop">
+      <circle cx="256" cy="256" r="256"/>
+    </clipPath>
   </defs>
-  <image href="/Logo.png" width="512" height="512" preserveAspectRatio="xMidYMid meet" filter="url(#removeWhite)"/>
+  <image href="/Logo.png" width="512" height="512" preserveAspectRatio="xMidYMid slice" clip-path="url(#circleCrop)"/>
 </svg>
