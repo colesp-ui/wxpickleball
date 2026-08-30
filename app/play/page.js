@@ -1,6 +1,6 @@
 import "../globals.css";
 
-const LOGO = "/Logo.png";
+const LOGO = "/logo-transparent.svg";
 
 function PeopleIcon({ count = 3 }) {
   const people = count === 4 ? [{x:5.5,y:7},{x:10.5,y:5.5},{x:15.5,y:5.5},{x:20.5,y:7}] : [{x:7,y:7},{x:13,y:5.5},{x:19,y:7}];
