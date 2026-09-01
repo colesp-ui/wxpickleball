@@ -1,0 +1,41 @@
+/* Keep the site header anchored to the left instead of floating inside the centered content container. */
+.topbar .container.nav,
+.play-nav .container,
+.site-header .container {
+  width:100%;
+  max-width:none;
+  margin-left:0;
+  margin-right:0;
+  padding-left:24px;
+  padding-right:24px;
+}
+
+.topbar .nav,
+.play-nav .container,
+.site-header .container {
+  justify-content:flex-start;
+}
+
+.topbar .navlinks,
+.desktop-nav {
+  margin-left:34px;
+}
+
+.topbar .nav-cta,
+.desktop-nav + .nav-cta {
+  margin-left:auto;
+}
+
+@media(max-width:900px){
+  .topbar .container.nav,
+  .play-nav .container,
+  .site-header .container {
+    padding-left:14px;
+    padding-right:14px;
+  }
+  .topbar .nav-cta,
+  .site-menu,
+  .play-menu {
+    margin-left:auto;
+  }
+}
