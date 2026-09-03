@@ -29,9 +29,16 @@ export default function Template({ children }) {
         }
         if(formTitle)formTitle.textContent='or we can reach out to you';
       }
-      if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){setTimeout(refineInterestCard,120)});else setTimeout(refineInterestCard,120);
-      window.addEventListener('load',refineInterestCard);
-      setTimeout(refineInterestCard,700);
+      function removeHeroTagline(){
+        document.querySelectorAll('#home *').forEach(function(el){
+          var text=(el.textContent||'').replace(/\\s+/g,' ').trim().toUpperCase();
+          if(text==='COMPETE. IMPROVE. REPRESENT.'||text==='COMPETE · IMPROVE · REPRESENT'||text==='COMPETE. IMPROVE. REPRESENT'){el.remove();}
+        });
+      }
+      function refinePage(){refineInterestCard();removeHeroTagline();}
+      if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){setTimeout(refinePage,120)});else setTimeout(refinePage,120);
+      window.addEventListener('load',refinePage);
+      setTimeout(refinePage,700);
     `}} />
     <script src="/photo-lightbox.js" defer></script>
   </>;
