@@ -9,7 +9,10 @@ export default function Template({ children }) {
       .wx-photo-lightbox-image{display:block;max-width:min(94vw,1500px);max-height:92vh;width:auto;height:auto;object-fit:contain;box-shadow:0 20px 70px rgba(0,0,0,.5);border-radius:4px}
       .wx-photo-lightbox-close{position:fixed;top:18px;right:22px;z-index:100000;width:48px;height:48px;border:0;border-radius:50%;background:rgba(7,28,49,.88);color:#fff;font:300 38px/44px Arial,Helvetica,sans-serif;text-align:center;cursor:pointer;box-shadow:0 4px 18px rgba(0,0,0,.3)}
       .wx-photo-lightbox-close:hover{background:#e51f35}
-      @media(max-width:600px){.wx-photo-lightbox{padding:18px}.wx-photo-lightbox-close{top:12px;right:12px;width:44px;height:44px;font-size:34px;line-height:40px}.wx-photo-lightbox-image{max-width:96vw;max-height:88vh}}
+      #home .wx-fused-mark{display:block;width:min(62vw,430px);height:auto;margin:0 0 8px;filter:drop-shadow(0 5px 14px rgba(0,0,0,.32))}
+      #home .wx-wow-title.wx-has-mark{font-size:0!important;line-height:1!important;letter-spacing:0!important}
+      #home .wx-wow-title.wx-has-mark>span{display:block!important;font-size:clamp(54px,7.2vw,110px)!important;line-height:.88!important;letter-spacing:-.055em!important;margin-top:2px!important;color:#e51f35!important}
+      @media(max-width:600px){.wx-photo-lightbox{padding:18px}.wx-photo-lightbox-close{top:12px;right:12px;width:44px;height:44px;font-size:34px;line-height:40px}.wx-photo-lightbox-image{max-width:96vw;max-height:88vh}#home .wx-fused-mark{width:min(68vw,360px);margin-bottom:4px}#home .wx-wow-title.wx-has-mark>span{font-size:clamp(54px,15vw,82px)!important}}
     `}</style>
     <script dangerouslySetInnerHTML={{__html:`
       function refineInterestCard(){
@@ -35,7 +38,15 @@ export default function Template({ children }) {
           if(text==='COMPETE. IMPROVE. REPRESENT.'||text==='COMPETE · IMPROVE · REPRESENT'||text==='COMPETE. IMPROVE. REPRESENT'){el.remove();}
         });
       }
-      function refinePage(){refineInterestCard();removeHeroTagline();}
+      function installFusedWx(){
+        var title=document.querySelector('#home .wx-wow-title');
+        if(!title||title.classList.contains('wx-has-mark'))return;
+        var label=title.querySelector('span');
+        var pickleball=label?label.textContent:'Pickleball';
+        title.classList.add('wx-has-mark');
+        title.innerHTML='<svg class="wx-fused-mark" viewBox="0 0 560 220" role="img" aria-label="WX"><path d="M22 24H94L151 140L213 24H269L326 139L389 24H462L401 108L488 196H413L352 135L294 196H228L190 123L150 196H84Z" fill="#fff" stroke="#e51f35" stroke-width="10" stroke-linejoin="miter"/></svg><span>'+pickleball+'</span>';
+      }
+      function refinePage(){refineInterestCard();removeHeroTagline();installFusedWx();}
       if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){setTimeout(refinePage,120)});else setTimeout(refinePage,120);
       window.addEventListener('load',refinePage);
       setTimeout(refinePage,700);
