@@ -2,40 +2,15 @@ export default function Template({ children }) {
   return <>
     {children}
     <style>{`
-      #contact .cta > div:first-child .cta-btn{margin-top:16px;display:inline-flex}
-      .wx-zoomable-photo{cursor:zoom-in}
-      .wx-photo-lightbox{position:fixed;inset:0;z-index:99999;background:rgba(2,10,18,.94);display:flex;align-items:center;justify-content:center;padding:34px;opacity:0;visibility:hidden;transition:opacity .18s ease,visibility .18s ease}
-      .wx-photo-lightbox.open{opacity:1;visibility:visible}
-      .wx-photo-lightbox-image{display:block;max-width:min(94vw,1500px);max-height:92vh;width:auto;height:auto;object-fit:contain;box-shadow:0 20px 70px rgba(0,0,0,.5);border-radius:4px}
-      .wx-photo-lightbox-close{position:fixed;top:18px;right:22px;z-index:100000;width:48px;height:48px;border:0;border-radius:50%;background:rgba(7,28,49,.88);color:#fff;font:300 38px/44px Arial,Helvetica,sans-serif;text-align:center;cursor:pointer;box-shadow:0 4px 18px rgba(0,0,0,.3)}
-      .wx-photo-lightbox-close:hover{background:#e51f35}
-      #home .wx-fused-mark{display:block;width:min(53vw,360px);height:auto;margin:0 0 8px;filter:drop-shadow(0 5px 14px rgba(0,0,0,.32))}
-      #home .wx-wow-title.wx-has-mark{font-size:0!important;line-height:1!important;letter-spacing:0!important}
-      #home .wx-wow-title.wx-has-mark>span{display:block!important;font-size:clamp(54px,7.2vw,110px)!important;line-height:.88!important;letter-spacing:-.055em!important;margin-top:2px!important;color:#e51f35!important}
-      @media(max-width:600px){.wx-photo-lightbox{padding:18px}.wx-photo-lightbox-close{top:12px;right:12px;width:44px;height:44px;font-size:34px;line-height:40px}.wx-photo-lightbox-image{max-width:96vw;max-height:88vh}#home .wx-fused-mark{width:min(54vw,285px);margin-bottom:5px}#home .wx-wow-title.wx-has-mark>span{font-size:clamp(54px,15vw,82px)!important}}
+      #contact .cta > div:first-child .cta-btn{margin-top:16px;display:inline-flex}.wx-zoomable-photo{cursor:zoom-in}.wx-photo-lightbox{position:fixed;inset:0;z-index:99999;background:rgba(2,10,18,.94);display:flex;align-items:center;justify-content:center;padding:34px;opacity:0;visibility:hidden;transition:opacity .18s ease,visibility .18s ease}.wx-photo-lightbox.open{opacity:1;visibility:visible}.wx-photo-lightbox-image{display:block;max-width:min(94vw,1500px);max-height:92vh;width:auto;height:auto;object-fit:contain;box-shadow:0 20px 70px rgba(0,0,0,.5);border-radius:4px}.wx-photo-lightbox-close{position:fixed;top:18px;right:22px;z-index:100000;width:48px;height:48px;border:0;border-radius:50%;background:rgba(7,28,49,.88);color:#fff;font:300 38px/44px Arial,Helvetica,sans-serif;text-align:center;cursor:pointer;box-shadow:0 4px 18px rgba(0,0,0,.3)}.wx-photo-lightbox-close:hover{background:#e51f35}
+      #home .wx-fused-mark{display:block;width:min(58vw,410px);height:auto;margin:0 0 7px;filter:drop-shadow(0 5px 14px rgba(0,0,0,.32))}#home .wx-wow-title.wx-has-mark{font-size:0!important;line-height:1!important;letter-spacing:0!important}#home .wx-wow-title.wx-has-mark>span{display:block!important;font-size:clamp(54px,7.2vw,110px)!important;line-height:.88!important;letter-spacing:-.055em!important;margin-top:2px!important;color:#e51f35!important}
+      @media(max-width:600px){.wx-photo-lightbox{padding:18px}.wx-photo-lightbox-close{top:12px;right:12px;width:44px;height:44px;font-size:34px;line-height:40px}.wx-photo-lightbox-image{max-width:96vw;max-height:88vh}#home .wx-fused-mark{width:min(61vw,320px);margin-bottom:5px}#home .wx-wow-title.wx-has-mark>span{font-size:clamp(54px,15vw,82px)!important}}
     `}</style>
     <script dangerouslySetInnerHTML={{__html:`
-      function refineInterestCard(){
-        var contact=document.getElementById('contact');
-        if(!contact)return;
-        var cta=contact.querySelector('.cta');
-        var heading=contact.querySelector('h3');
-        var copy=contact.querySelector('.cta p');
-        var button=contact.querySelector('.cta > a');
-        var formTitle=contact.querySelector('.wx-info-title');
-        if(copy)copy.remove();
-        if(button){button.textContent='Learn More Here';if(heading&&heading.parentElement&&button.parentElement!==heading.parentElement){heading.insertAdjacentElement('afterend',button);}}
-        if(formTitle)formTitle.textContent='or we can reach out to you';
-      }
-      function removeHeroTagline(){document.querySelectorAll('#home *').forEach(function(el){var text=(el.textContent||'').replace(/\\s+/g,' ').trim().toUpperCase();if(text==='COMPETE. IMPROVE. REPRESENT.'||text==='COMPETE · IMPROVE · REPRESENT'||text==='COMPETE. IMPROVE. REPRESENT'){el.remove();}});}
-      function installFusedWx(){
-        var title=document.querySelector('#home .wx-wow-title');if(!title||title.classList.contains('wx-has-mark'))return;
-        var label=title.querySelector('span');var pickleball=label?label.textContent:'Pickleball';title.classList.add('wx-has-mark');
-        title.innerHTML='<svg class="wx-fused-mark" viewBox="0 0 500 220" role="img" aria-label="WX"><path d="M28 28 L102 190 L205 28 L298 190 L452 28" fill="none" stroke="#fff" stroke-width="62" stroke-linecap="square" stroke-linejoin="miter"/><path d="M298 190 L452 28 M365 99 L458 190" fill="none" stroke="#fff" stroke-width="62" stroke-linecap="square" stroke-linejoin="miter"/></svg><span>'+pickleball+'</span>';
-      }
-      function refinePage(){refineInterestCard();removeHeroTagline();installFusedWx();}
-      if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){setTimeout(refinePage,120)});else setTimeout(refinePage,120);window.addEventListener('load',refinePage);setTimeout(refinePage,700);
-    `}} />
-    <script src="/photo-lightbox.js" defer></script>
+      function refineInterestCard(){var contact=document.getElementById('contact');if(!contact)return;var heading=contact.querySelector('h3');var copy=contact.querySelector('.cta p');var button=contact.querySelector('.cta > a');var formTitle=contact.querySelector('.wx-info-title');if(copy)copy.remove();if(button){button.textContent='Learn More Here';if(heading&&heading.parentElement&&button.parentElement!==heading.parentElement)heading.insertAdjacentElement('afterend',button);}if(formTitle)formTitle.textContent='or we can reach out to you';}
+      function removeHeroTagline(){document.querySelectorAll('#home *').forEach(function(el){var text=(el.textContent||'').replace(/\\s+/g,' ').trim().toUpperCase();if(text==='COMPETE. IMPROVE. REPRESENT.'||text==='COMPETE · IMPROVE · REPRESENT'||text==='COMPETE. IMPROVE. REPRESENT')el.remove();});}
+      function installFusedWx(){var title=document.querySelector('#home .wx-wow-title');if(!title||title.classList.contains('wx-has-mark'))return;var label=title.querySelector('span');var pickleball=label?label.textContent:'Pickleball';title.classList.add('wx-has-mark');title.innerHTML='<svg class="wx-fused-mark" viewBox="0 0 640 430" role="img" aria-label="WX"><g fill="#123456" stroke-linejoin="miter"><path d="M38 36H145L203 274L270 151H337L392 270L493 36H602L520 211L604 394H496L434 269L376 394H276L237 292L188 394H82L98 358L38 36Z" stroke="#ef2b2d" stroke-width="26"/><path d="M38 36H145L203 274L270 151H337L392 270L493 36H602L520 211L604 394H496L434 269L376 394H276L237 292L188 394H82L98 358L38 36Z" stroke="#fff" stroke-width="13"/></g></svg><span>'+pickleball+'</span>';}
+      function refinePage(){refineInterestCard();removeHeroTagline();installFusedWx();}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){setTimeout(refinePage,120)});else setTimeout(refinePage,120);window.addEventListener('load',refinePage);setTimeout(refinePage,700);
+    `}} /><script src="/photo-lightbox.js" defer></script>
   </>;
 }
