@@ -5,7 +5,6 @@
 
     var importantTitles=['Open Play Evaluations','Official Tryouts','Formal Offers Extended','Tryouts + Team Selection','Parent + Athlete Meeting'];
     var rows=Array.from(schedule.querySelectorAll('.schedule-table tbody tr'));
-    if(!rows.length)return;
 
     if(!schedule.querySelector('.wx-important-dates')){
       var wrap=document.createElement('section');
@@ -13,26 +12,6 @@
       wrap.innerHTML='<div class="wx-important-kicker">Season Kickoff</div><h3>Important Dates Coming Up</h3><div class="wx-important-grid"><article class="wx-important-card"><div class="wx-important-date">Tue · Sep 29, 2026</div><div class="wx-important-title">Open Play Evaluations</div><div class="wx-important-meta"><span>8:00 PM – 10:00 PM</span><span>Washington Park</span></div></article><article class="wx-important-card"><div class="wx-important-date">Tue · Oct 6, 2026</div><div class="wx-important-title">Open Play Evaluations</div><div class="wx-important-meta"><span>8:00 PM – 10:00 PM</span><span>Washington Park</span></div></article><article class="wx-important-card"><div class="wx-important-date">Wed · Oct 21, 2026</div><div class="wx-important-title">Parent + Athlete Meeting</div><div class="wx-important-meta"><span>6:30 PM – 7:30 PM</span><span>Woods Cross Library</span><span>Mandatory for all parents and athletes</span></div></article><article class="wx-important-card"><div class="wx-important-date">Thu · Oct 22, 2026</div><div class="wx-important-title">Tryouts + Team Selection</div><div class="wx-important-meta"><span>3:00 PM – 6:00 PM</span><span>Woods Cross Kitchen</span><span>Athletes invited to a 1-hour window</span></div></article></div>';
       var groups=schedule.querySelector('.schedule-groups');
       if(groups)groups.parentNode.insertBefore(wrap,groups);
-    }
-
-    rows.forEach(function(row){
-        var cells=row.querySelectorAll('td');
-        if(cells.length<5)return;
-        var title=(cells[2].textContent||'').trim();
-        if(importantTitles.indexOf(title)===-1)return;
-        var key=[cells[0].textContent,cells[1].textContent,title,cells[3].textContent].join('|');
-        if(seen[key])return;
-        seen[key]=true;
-        unique.push({date:cells[0].textContent.trim(),time:cells[1].textContent.trim(),title:title,location:cells[3].textContent.trim()});
-      });
-
-      if(unique.length){
-        var wrap=document.createElement('section');
-        wrap.className='wx-important-dates';
-        wrap.innerHTML='<div class="wx-important-kicker">Season Kickoff</div><h3>Important Dates Coming Up</h3><div class="wx-important-grid">'+unique.map(function(item){return '<article class="wx-important-card"><div class="wx-important-date">'+item.date+'</div><div class="wx-important-title">'+item.title+'</div><div class="wx-important-meta"><span>'+item.time+'</span><span>'+item.location+'</span></div></article>';}).join('')+'</div>';
-        var groups=schedule.querySelector('.schedule-groups');
-        if(groups)groups.parentNode.insertBefore(wrap,groups);
-      }
     }
 
     rows.forEach(function(row){
