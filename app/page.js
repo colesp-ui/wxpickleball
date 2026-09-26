@@ -7,26 +7,26 @@ const games = [
   { date: "OCT 6", day: "TUE", year: "2026", time: "8:00 PM - 10:00 PM", title: "Open Play Evaluations", location: "Washington Park", players: "ALL" },
   { date: "OCT 27", day: "TUE", year: "2026", time: "3:00 PM - 6:00 PM", title: "Official Tryouts", location: "Kaysville Picklr", players: "ALL" },
   { date: "OCT 27", day: "TUE", year: "2026", time: "7:00 PM - 10:00 PM", title: "Formal Offers Extended", location: "Text Msg", players: "ALL" },
-  { date: "NOV 2", day: "MON", year: "2026", time: "3:00 PM - 4:00 PM", title: "Open Play", location: "WX Small Gym", players: "Development" },
+  { date: "NOV 2", day: "MON", year: "2026", time: "3:00 PM - 4:00 PM", title: "Open Play", location: "WX Small Gym", players: "Club" },
   { date: "NOV 3", day: "TUE", year: "2026", time: "3:00 PM - 5:00 PM", title: "Practice #0", location: "Kaysville Picklr", players: "JV & Varsity" },
-  { date: "NOV 9", day: "MON", year: "2026", time: "3:00 PM - 4:00 PM", title: "Open Play", location: "WX Small Gym", players: "Development" },
+  { date: "NOV 9", day: "MON", year: "2026", time: "3:00 PM - 4:00 PM", title: "Open Play", location: "WX Small Gym", players: "Club" },
   { date: "NOV 10", day: "TUE", year: "2026", time: "3:00 PM - 5:00 PM", title: "Practice #1", location: "Kaysville Picklr", players: "JV & Varsity" },
   { date: "NOV 12", day: "THU", year: "2026", time: "4:00 PM - 6:00 PM", title: "Meet 1", location: "Kaysville Picklr", players: "Varsity" },
   { date: "NOV 13", day: "FRI", year: "2026", time: "4:00 PM - 6:00 PM", title: "Meet 1", location: "Kaysville Picklr", players: "JV" },
-  { date: "NOV 16", day: "MON", year: "2026", time: "3:00 PM - 4:00 PM", title: "Open Play", location: "WX Small Gym", players: "Development" },
+  { date: "NOV 16", day: "MON", year: "2026", time: "3:00 PM - 4:00 PM", title: "Open Play", location: "WX Small Gym", players: "Club" },
   { date: "NOV 17", day: "TUE", year: "2026", time: "3:00 PM - 5:00 PM", title: "Practice #2", location: "Kaysville Picklr", players: "JV & Varsity" },
   { date: "NOV 19", day: "THU", year: "2026", time: "4:00 PM - 6:00 PM", title: "Meet 2", location: "Kaysville Picklr", players: "Varsity" },
   { date: "NOV 20", day: "FRI", year: "2026", time: "4:00 PM - 6:00 PM", title: "Meet 2", location: "Kaysville Picklr", players: "JV" },
-  { date: "NOV 23", day: "MON", year: "2026", time: "3:00 PM - 4:00 PM", title: "Open Play", location: "WX Small Gym", players: "Development" },
-  { date: "NOV 30", day: "MON", year: "2026", time: "3:00 PM - 4:00 PM", title: "Open Play", location: "WX Small Gym", players: "Development" },
+  { date: "NOV 23", day: "MON", year: "2026", time: "3:00 PM - 4:00 PM", title: "Open Play", location: "WX Small Gym", players: "Club" },
+  { date: "NOV 30", day: "MON", year: "2026", time: "3:00 PM - 4:00 PM", title: "Open Play", location: "WX Small Gym", players: "Club" },
   { date: "DEC 1", day: "TUE", year: "2026", time: "3:00 PM - 5:00 PM", title: "Practice #3", location: "Kaysville Picklr", players: "JV & Varsity" },
   { date: "DEC 3", day: "THU", year: "2026", time: "4:00 PM - 6:00 PM", title: "Meet 3", location: "Kaysville Picklr", players: "Varsity" },
   { date: "DEC 4", day: "FRI", year: "2026", time: "4:00 PM - 6:00 PM", title: "Meet 3", location: "Kaysville Picklr", players: "JV" },
-  { date: "DEC 7", day: "MON", year: "2026", time: "3:00 PM - 4:00 PM", title: "Open Play", location: "WX Small Gym", players: "Development" },
+  { date: "DEC 7", day: "MON", year: "2026", time: "3:00 PM - 4:00 PM", title: "Open Play", location: "WX Small Gym", players: "Club" },
   { date: "DEC 8", day: "TUE", year: "2026", time: "3:00 PM - 5:00 PM", title: "Practice #4", location: "Kaysville Picklr", players: "JV & Varsity" },
   { date: "DEC 10", day: "THU", year: "2026", time: "4:00 PM - 6:00 PM", title: "Meet 4", location: "Kaysville Picklr", players: "Varsity" },
   { date: "DEC 11", day: "FRI", year: "2026", time: "4:00 PM - 6:00 PM", title: "Meet 4", location: "Kaysville Picklr", players: "JV" },
-  { date: "DEC 14", day: "MON", year: "2026", time: "3:00 PM - 4:00 PM", title: "Open Play", location: "WX Small Gym", players: "Development" },
+  { date: "DEC 14", day: "MON", year: "2026", time: "3:00 PM - 4:00 PM", title: "Open Play", location: "WX Small Gym", players: "Club" },
   { date: "DEC 15", day: "TUE", year: "2026", time: "3:00 PM - 5:00 PM", title: "Practice #5", location: "Kaysville Picklr", players: "JV & Varsity" },
   { date: "DEC 17", day: "THU", year: "2026", time: "4:00 PM - 6:00 PM", title: "Meet 5", location: "Kaysville Picklr", players: "Varsity" },
   { date: "DEC 18", day: "FRI", year: "2026", time: "4:00 PM - 6:00 PM", title: "Meet 5", location: "Kaysville Picklr", players: "JV" },
@@ -34,11 +34,11 @@ const games = [
   { date: "JAN 5", day: "TUE", year: "2027", time: "3:00 PM - 5:00 PM", title: "Practice #6", location: "Kaysville Picklr", players: "JV & Varsity" },
   { date: "JAN 7", day: "THU", year: "2027", time: "4:00 PM - 6:00 PM", title: "Meet 6", location: "Kaysville Picklr", players: "Varsity" },
   { date: "JAN 8", day: "FRI", year: "2027", time: "4:00 PM - 6:00 PM", title: "Meet 6", location: "Kaysville Picklr", players: "JV" },
-  { date: "JAN 11", day: "MON", year: "2027", time: "3:00 PM - 4:00 PM", title: "Open Play", location: "WX Small Gym", players: "Development" },
+  { date: "JAN 11", day: "MON", year: "2027", time: "3:00 PM - 4:00 PM", title: "Open Play", location: "WX Small Gym", players: "Club" },
   { date: "JAN 12", day: "TUE", year: "2027", time: "3:00 PM - 5:00 PM", title: "Practice #7", location: "Kaysville Picklr", players: "JV & Varsity" },
   { date: "JAN 14", day: "THU", year: "2027", time: "4:00 PM - 6:00 PM", title: "Meet 7", location: "Kaysville Picklr", players: "Varsity" },
   { date: "JAN 15", day: "FRI", year: "2027", time: "4:00 PM - 6:00 PM", title: "Meet 7", location: "Kaysville Picklr", players: "JV" },
-  { date: "JAN 18", day: "MON", year: "2027", time: "3:00 PM - 4:00 PM", title: "Open Play", location: "WX Small Gym", players: "Development" },
+  { date: "JAN 18", day: "MON", year: "2027", time: "3:00 PM - 4:00 PM", title: "Open Play", location: "WX Small Gym", players: "Club" },
   { date: "JAN 19", day: "TUE", year: "2027", time: "3:00 PM - 5:00 PM", title: "Practice #8", location: "Kaysville Picklr", players: "JV & Varsity" },
   { date: "JAN 23", day: "SAT", year: "2027", time: "TBA", title: "Regionals — Championship", location: "TBA", players: "Varsity" },
   { date: "JAN 23", day: "SAT", year: "2027", time: "TBA", title: "Regionals — Championship", location: "TBA", players: "JV" },
@@ -52,7 +52,7 @@ const games = [
 const scheduleGroups = [
   { name: "VARSITY", className: "varsity", games: games.filter((g) => ["Varsity", "JV & Varsity", "ALL"].includes(g.players)) },
   { name: "JUNIOR VARSITY", className: "jv", games: games.filter((g) => ["JV", "JV & Varsity", "ALL"].includes(g.players)) },
-  { name: "DEVELOPMENT", className: "development", games: games.filter((g) => g.players === "Development" || g.players === "ALL") },
+  { name: "DEVELOPMENT", className: "development", games: games.filter((g) => g.players === "Club" || g.players === "ALL") },
 ];
 
 const coaches = [
@@ -76,7 +76,7 @@ function ScheduleTable({ group }) {
         <span>{group.name}</span>
         <span className="schedule-toggle" aria-hidden="true"><span className="toggle-label toggle-label-open">Collapse</span><span className="toggle-label toggle-label-closed">Expand</span><svg className="schedule-chevron" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
       </summary>
-      <div className="schedule-table-wrap"><table className="schedule-table"><thead><tr><th>Date</th><th>Time</th><th>Event</th><th>Location</th><th>Players</th></tr></thead><tbody>{group.games.map((g, i) => <tr key={`${group.name}-${g.date}-${g.title}-${i}`}><td>{g.day.charAt(0)+g.day.slice(1).toLowerCase()} | {g.date.charAt(0)+g.date.slice(1).toLowerCase()}, {g.year}</td><td>{g.time}</td><td>{g.title}</td><td>{g.location}</td><td><span className={`player-badge ${g.players === "ALL" ? "all" : g.players === "Development" ? "dev" : "team"}`}>{g.players}</span></td></tr>)}</tbody></table></div>
+      <div className="schedule-table-wrap"><table className="schedule-table"><thead><tr><th>Date</th><th>Time</th><th>Event</th><th>Location</th><th>Players</th></tr></thead><tbody>{group.games.map((g, i) => <tr key={`${group.name}-${g.date}-${g.title}-${i}`}><td>{g.day.charAt(0)+g.day.slice(1).toLowerCase()} | {g.date.charAt(0)+g.date.slice(1).toLowerCase()}, {g.year}</td><td>{g.time}</td><td>{g.title}</td><td>{g.location}</td><td><span className={`player-badge ${g.players === "ALL" ? "all" : g.players === "Club" ? "dev" : "team"}`}>{g.players}</span></td></tr>)}</tbody></table></div>
     </details>
   );
 }
