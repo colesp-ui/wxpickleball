@@ -52,7 +52,7 @@ const games = [
 const scheduleGroups = [
   { name: "VARSITY", className: "varsity", games: games.filter((g) => ["Varsity", "JV & Varsity", "ALL"].includes(g.players)) },
   { name: "JUNIOR VARSITY", className: "jv", games: games.filter((g) => ["JV", "JV & Varsity", "ALL"].includes(g.players)) },
-  { name: "DEVELOPMENT", className: "development", games: games.filter((g) => g.players === "Club" || g.players === "ALL") },
+  { name: "CLUB", className: "development", games: games.filter((g) => g.players === "Club" || g.players === "ALL") },
 ];
 
 const coaches = [
