@@ -8,7 +8,7 @@ const games = [
   { date: "OCT 27", day: "TUE", year: "2026", time: "3:00 PM - 6:00 PM", title: "Official Tryouts", location: "Kaysville Picklr", players: "ALL" },
   { date: "OCT 27", day: "TUE", year: "2026", time: "7:00 PM - 10:00 PM", title: "Formal Offers Extended", location: "Text Msg", players: "ALL" },
   { date: "NOV 3", day: "TUE", year: "2026", time: "3:00 PM - 5:00 PM", title: "Practice #0", location: "Kaysville Picklr", players: "JV & Varsity" },
-  { date: "NOV 9", day: "MON", year: "2026", time: "3:45 PM - 5:30 PM", title: "Club Team Play", location: "Washington Park", players: "Club" },
+  { date: "NOV 9", day: "MON", year: "2026", time: "3:45 PM - 5:30 PM", title: "Club Team Play", location: "Choice Academy", players: "Club" },
   { date: "NOV 10", day: "TUE", year: "2026", time: "3:00 PM - 5:00 PM", title: "Practice #1", location: "Kaysville Picklr", players: "JV & Varsity" },
   { date: "NOV 12", day: "THU", year: "2026", time: "4:00 PM - 5:30 PM", title: "Meet #1 vs Alta", location: "Sports Mall Murray", players: "Varsity" },
   { date: "NOV 13", day: "FRI", year: "2026", time: "4:00 PM - 5:30 PM", title: "Meet #1 vs Bonneville", location: "Kitchen Roy", players: "JV" },
