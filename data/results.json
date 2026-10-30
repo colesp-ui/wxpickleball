@@ -1,0 +1,81 @@
+{
+  "rows": [
+    {
+      "Date": "10/29/26",
+      "Opponent": "American Heritage",
+      "Team": "Pre-Season Mix",
+      "Match Type": "Boys Doubles",
+      "WX Players": "Drew / James",
+      "Game 1": "11-1",
+      "Game 2": "11-5",
+      "Game 3": "11-8",
+      "Winner": "WX"
+    },
+    {
+      "Date": "10/29/26",
+      "Opponent": "American Heritage",
+      "Team": "Pre-Season Mix",
+      "Match Type": "Girls Doubles",
+      "WX Players": "Chloe / Ava",
+      "Game 1": "5-11",
+      "Game 2": "6-11",
+      "Game 3": "8-11",
+      "Winner": "A.H."
+    },
+    {
+      "Date": "10/29/26",
+      "Opponent": "American Heritage",
+      "Team": "Pre-Season Mix",
+      "Match Type": "Mixed 1",
+      "WX Players": "Jack / LIbby",
+      "Game 1": "3-11",
+      "Game 2": "5-11",
+      "Game 3": "9-11",
+      "Winner": "A.H."
+    },
+    {
+      "Date": "10/29/26",
+      "Opponent": "American Heritage",
+      "Team": "Pre-Season Mix",
+      "Match Type": "Mixed 2",
+      "WX Players": "Garrett / Emily",
+      "Game 1": "5-11",
+      "Game 2": "6-11",
+      "Game 3": "8-11",
+      "Winner": "A.H."
+    },
+    {
+      "Date": "10/29/26",
+      "Opponent": "American Heritage",
+      "Team": "Pre-Season Mix",
+      "Match Type": "Mixed 3",
+      "WX Players": "Drew / Chloe",
+      "Game 1": "11-5",
+      "Game 2": "11-4",
+      "Game 3": "11-0",
+      "Winner": "WX"
+    },
+    {
+      "Date": "10/29/26",
+      "Opponent": "American Heritage",
+      "Team": "Pre-Season Mix",
+      "Match Type": "Mixed 4",
+      "WX Players": "James / Libby",
+      "Game 1": "11-6",
+      "Game 2": "11-5",
+      "Game 3": "11-2",
+      "Winner": "WX"
+    },
+    {
+      "Date": "10/29/26",
+      "Opponent": "American Heritage",
+      "Team": "Pre-Season Mix",
+      "Match Type": "DreamBreaker",
+      "WX Players": "ALL",
+      "Game 1": "18-21",
+      "Game 2": "-",
+      "Game 3": "-",
+      "Winner": "A.H."
+    }
+  ]
+}
