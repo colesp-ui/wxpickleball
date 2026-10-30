@@ -25,3 +25,13 @@
 .wx-upcoming-card:not(.wx-upcoming-shared){border-top-color:var(--team-color)}
 .wx-upcoming-card .wx-upcoming-date{color:var(--team-soft)}
 .wx-upcoming-card .wx-upcoming-audience{border-color:var(--team-color);color:var(--team-soft)}
+
+/* White tops for every card; color only the team-specific label outlines. */
+.wx-upcoming-card,.wx-upcoming-card.wx-upcoming-varsity,.wx-upcoming-card.wx-upcoming-jv,.wx-upcoming-card.wx-upcoming-club,.wx-upcoming-card.wx-upcoming-shared,.wx-upcoming-card.wx-upcoming-all{border-top:4px solid #fff;padding-top:22px}
+.wx-upcoming-card.wx-upcoming-shared::before{display:none}
+.wx-upcoming-audiences{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
+.wx-upcoming-audiences .wx-upcoming-audience{margin-top:0;color:#fff;border:2px solid #d5e0ea;border-radius:7px;padding:7px 11px}
+.wx-upcoming-audiences .wx-audience-varsity{border-color:#e51f35}
+.wx-upcoming-audiences .wx-audience-jv{border-color:#2e7de9}
+.wx-upcoming-audiences .wx-audience-club{border-color:#8b5cf6}
+.wx-upcoming-audiences .wx-audience-all{border-color:#fff}

@@ -49,7 +49,11 @@ export default function UpcomingActivities({ games }) {
           <h3>{event.title}</h3>
           <div className="wx-upcoming-detail">{event.time}</div>
           <div className="wx-upcoming-detail">{event.location}</div>
-          <div className="wx-upcoming-audience">{event.players}</div>
+          <div className="wx-upcoming-audiences">
+            {(event.players === "JV & Varsity" ? ["Varsity", "JV"] : [event.players]).map((team) => (
+              <span key={team} className={"wx-upcoming-audience wx-audience-" + teamColor(team)}>{team}</span>
+            ))}
+          </div>
         </article>
       )}</div> : <p className="wx-upcoming-none">No upcoming activities are currently scheduled.</p>}
     </div>
