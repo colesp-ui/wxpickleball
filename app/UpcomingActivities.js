@@ -23,6 +23,14 @@ const dateFormatter = new Intl.DateTimeFormat("en-US", {
   weekday: "short", month: "short", day: "numeric", year: "numeric", timeZone: "UTC"
 });
 
+function teamColor(players) {
+  if (players === "Varsity") return "varsity";
+  if (players === "JV") return "jv";
+  if (players === "Club") return "club";
+  if (players === "JV & Varsity") return "shared";
+  return "all";
+}
+
 export default function UpcomingActivities({ games }) {
   const [today, setToday] = useState(null);
   useEffect(() => { setToday(mountainToday()); }, []);
@@ -36,7 +44,7 @@ export default function UpcomingActivities({ games }) {
         <a href="#schedule">Full Schedule <span aria-hidden="true">→</span></a>
       </div>
       {upcoming.length ? <div className="wx-upcoming-grid">{upcoming.map(event =>
-        <article className="wx-upcoming-card" key={event.i}>
+        <article className={`wx-upcoming-card wx-upcoming-${teamColor(event.players)}`} key={event.i}>
           <div className="wx-upcoming-date">{dateFormatter.format(event.when.date)}</div>
           <h3>{event.title}</h3>
           <div className="wx-upcoming-detail">{event.time}</div>

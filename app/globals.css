@@ -14,3 +14,14 @@
 .wx-upcoming-none{color:#c6d6e5}
 @media(max-width:900px){.wx-upcoming-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.wx-upcoming-section{padding:46px 0 56px}.wx-upcoming-heading{display:block}.wx-upcoming-heading>a{display:inline-block;margin-top:15px}.wx-upcoming-grid{grid-template-columns:1fr}.wx-upcoming-card{padding:19px}.wx-upcoming-card h3{margin:10px 0;font-size:21px}}
+
+/* Upcoming cards use the same team palette as the schedule: Varsity red, JV blue, Club purple. */
+.wx-upcoming-card.wx-upcoming-varsity{--team-color:#e51f35;--team-soft:#ff8995}
+.wx-upcoming-card.wx-upcoming-jv{--team-color:#2e7de9;--team-soft:#81b7ff}
+.wx-upcoming-card.wx-upcoming-club{--team-color:#8b5cf6;--team-soft:#c0a6ff}
+.wx-upcoming-card.wx-upcoming-shared{--team-color:#2e7de9;--team-soft:#b5c8ff;border-top:0;position:relative;padding-top:26px}
+.wx-upcoming-card.wx-upcoming-shared::before{content:"";position:absolute;inset:0 0 auto;height:5px;background:linear-gradient(to right,#e51f35 50%,#2e7de9 50%);border-radius:13px 13px 0 0}
+.wx-upcoming-card.wx-upcoming-all{--team-color:#e51f35;--team-soft:#ff8995}
+.wx-upcoming-card:not(.wx-upcoming-shared){border-top-color:var(--team-color)}
+.wx-upcoming-card .wx-upcoming-date{color:var(--team-soft)}
+.wx-upcoming-card .wx-upcoming-audience{border-color:var(--team-color);color:var(--team-soft)}
