@@ -20,7 +20,7 @@ export default function RostersPage(){
     {roster.map(t=><section id={t.team.toLowerCase()} key={t.team} className={"wx-roster-team wx-"+t.team.toLowerCase()}>
       <div className="wx-roster-team-heading"><div><span className="wx-roster-team-kicker">WX PICKLEBALL • 2026–27</span><h2>{t.team==="JV"?"Junior Varsity":t.team}</h2></div><div className="wx-roster-total"><b>{t.boys.length+t.girls.length}</b><span>PLAYERS</span></div></div>
       <div className="wx-roster-columns">
-        {[{title:"Boys",names:t.boys},{title:"Girls",names:t.girls}].map(group=><div key={group.title} className="wx-roster-column"><div className="wx-roster-column-top"><h3>{group.title}</h3><span>{group.names.length} ATHLETES</span></div><div className="wx-roster-names">{group.names.map((name,i)=><div className="wx-roster-person" key={name}><span className="wx-roster-number">{String(i+1).padStart(2,"0")}</span><span>{name}</span></div>)}</div></div>)}
+        {[{title:"Boys",names:t.boys},{title:"Girls",names:t.girls}].map(group=><div key={group.title} className="wx-roster-column"><div className="wx-roster-column-top"><h3>{group.title}</h3><span>{group.names.length} ATHLETES</span></div><div className="wx-roster-names">{group.names.map((name)=><div className="wx-roster-person" key={name}><span>{name}</span></div>)}</div></div>)}
       </div>
     </section>)}
     <p className="wx-roster-note">2026–2027 team assignments • Player names only. Rosters may be updated as the season progresses.</p>
