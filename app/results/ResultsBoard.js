@@ -206,7 +206,7 @@ export default function ResultsBoard({ rows, live }) {
           </div>
 
           {visible.length ? <div className="wx-meets-list">{visible.map((meet, i) => <MeetCard key={meet.key} meet={meet} index={i} />)}</div> :
-            <div className="wx-results-empty"><span>🏓</span><h3>No {filter === "All" ? "" : filter.toLowerCase() + " "}results yet</h3><p>When scores for this team are published, the meet cards will appear here.</p></div>
+            <div className="wx-results-empty"><img src="/Logo.png" alt="WX Pickleball logo" className="wx-empty-logo" /><h3>No {filter === "All" ? "" : filter.toLowerCase() + " "}results yet</h3><p>When scores for this team are published, the meet cards will appear here.</p></div>
           }
           <div className="wx-results-bottom"><p>Scores are displayed from the WX Pickleball scorebook. Preseason exhibitions do not count toward the official Varsity record.</p><a href="/#schedule">VIEW SEASON SCHEDULE <span>→</span></a></div>
         </div>
