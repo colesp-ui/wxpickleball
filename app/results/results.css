@@ -54,11 +54,12 @@
 .wx-score-kicker{letter-spacing:.2em;font-size:10px;font-weight:900;color:#71869a}
 .wx-score-numbers{display:flex;align-items:center;justify-content:center;gap:21px;line-height:1.1;margin:6px 0}
 .wx-score-numbers span{font-size:clamp(66px,7.4vw,111px);letter-spacing:-.085em;font-weight:900;color:#102033;font-variant-numeric:tabular-nums}
-.wx-score-numbers span.wx-leading-score{color:#e51f35}
+.wx-score-numbers span.wx-leading-score.wx-score-wx{color:#2e7de9}
+.wx-score-numbers span.wx-leading-score.wx-score-opponent{color:#e51f35}
 .wx-score-numbers i{font-style:normal;color:#bbc8d4;font-size:45px;font-weight:200;transform:translateY(-5px)}
 .wx-outcome{font-size:10px;font-weight:900;letter-spacing:.11em;line-height:1.4}
-.wx-outcome-win{color:#d21d33}
-.wx-outcome-loss{color:#5f7387}
+.wx-outcome-win{color:#2e7de9}
+.wx-outcome-loss{color:#e51f35}
 .wx-meet-summary{display:grid;grid-template-columns:repeat(3,1fr);background:#f1f5f9;border-top:1px solid #e3eaf1;border-bottom:1px solid #e3eaf1}
 .wx-meet-summary>div{padding:18px 20px;text-align:center;border-right:1px solid #dce5ee}
 .wx-meet-summary>div:last-child{border-right:0}
@@ -72,25 +73,27 @@
 .wx-meet-details[open] .wx-chevron{transform:rotate(180deg)}
 .wx-matches-grid{padding:0 28px 28px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .wx-match-card{border-radius:12px;border:1px solid #e2e9ef;border-left:5px solid #c9d4df;padding:22px;background:#fff;min-width:0}
-.wx-match-won{border-left-color:#e51f35}
+.wx-match-won{border-left-color:#2e7de9}
+.wx-match-lost{border-left-color:#e51f35}
 .wx-match-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
 .wx-match-type{font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:900;color:#63798b}
 .wx-result-tag{display:inline-block;font-size:9px;font-weight:900;letter-spacing:.09em;border-radius:5px;padding:8px 10px;text-align:center;max-width:160px;line-height:1.35}
-.wx-result-win{color:#c11730;background:#fff0f2}
-.wx-result-loss{color:#40596f;background:#eaf0f5}
+.wx-result-win{color:#1357b5;background:#e8f1ff}
+.wx-result-loss{color:#be1730;background:#fff0f2}
 .wx-match-players{font-size:22px;font-weight:900;letter-spacing:-.03em;margin:14px 0 20px;overflow-wrap:anywhere}
 .wx-game-row{display:flex;align-items:center;flex-wrap:wrap;gap:7px}
 .wx-game-label{font-size:9px;letter-spacing:.14em;font-weight:900;color:#7c8fa0;margin-right:4px}
 .wx-game-pill{background:#edf1f5;color:#41596e;padding:8px 10px;border-radius:6px;font-weight:900;font-size:13px;font-variant-numeric:tabular-nums}
-.wx-game-pill-win{background:#fee9ed;color:#b71830}
+.wx-game-pill-win-wx{background:#e8f1ff;color:#1357b5}
+.wx-game-pill-win-opp{background:#fff0f2;color:#be1730}
 .wx-dream-row{grid-column:1/-1;display:flex;align-items:center;gap:18px;background:#091f35;border-radius:12px;padding:21px 23px;color:#fff}
 .wx-dream-icon{font-size:30px}
 .wx-dream-info{display:flex;flex:1;flex-direction:column;gap:5px}
 .wx-dream-info strong{font-size:14px;letter-spacing:.08em}
 .wx-dream-info span{color:#a6b9cc;font-size:12px}
 .wx-dream-score{font-size:26px;font-weight:900;letter-spacing:-.03em;white-space:nowrap}
-.wx-dream-row .wx-result-loss{background:#30475d;color:#e4edf5}
-.wx-dream-row .wx-result-win{background:#4c1725;color:#ffd8df}
+.wx-dream-row .wx-result-loss{background:#571d2b;color:#ffdbe3}
+.wx-dream-row .wx-result-win{background:#153e7b;color:#d9eaff}
 .wx-results-empty{background:#fff;border:1px dashed #bdccda;border-radius:17px;text-align:center;padding:80px 24px}
 .wx-results-empty>span{font-size:44px}
 .wx-results-empty h3{font-size:27px;margin:18px 0 10px}

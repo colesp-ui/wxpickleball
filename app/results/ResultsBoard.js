@@ -88,7 +88,7 @@ function MatchCard({ match, opponent }) {
       <div className="wx-game-row">
         <span className="wx-game-label">GAMES</span>
         {match.games.map((game, i) => (
-          <span key={i} className={"wx-game-pill " + (game.wxWon ? "wx-game-pill-win" : "")}>{game.label}</span>
+          <span key={i} className={"wx-game-pill " + (game.wxWon ? "wx-game-pill-win-wx" : game.oppWon ? "wx-game-pill-win-opp" : "")}>{game.label}</span>
         ))}
       </div>
     </article>
@@ -112,9 +112,9 @@ function MeetCard({ meet, index }) {
         <div className="wx-score-center">
           <div className="wx-score-kicker">FINAL SCORE</div>
           <div className="wx-score-numbers">
-            <span className={meet.isWxWin ? "wx-leading-score" : ""}>{meet.wx}</span>
+            <span className={meet.isWxWin ? "wx-leading-score wx-score-wx" : ""}>{meet.wx}</span>
             <i>:</i>
-            <span className={!meet.isWxWin && meet.opponentScore > meet.wx ? "wx-leading-score" : ""}>{meet.opponentScore}</span>
+            <span className={!meet.isWxWin && meet.opponentScore > meet.wx ? "wx-leading-score wx-score-opponent" : ""}>{meet.opponentScore}</span>
           </div>
           <div className={"wx-outcome " + (meet.isWxWin ? "wx-outcome-win" : "wx-outcome-loss")}>
             {meet.isWxWin ? "WOODS CROSS WINS" : meet.opponent.toUpperCase() + " WINS"}
