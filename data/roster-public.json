@@ -1,0 +1,74 @@
+[
+  {
+    "team": "Varsity",
+    "boys": [
+      "Drew Bergeson",
+      "James Black",
+      "Luke Olsen",
+      "Tyler Allen"
+    ],
+    "girls": [
+      "Chloe Coles",
+      "Joslyn Rose",
+      "Lillie Bennion",
+      "Roxanne Rose"
+    ]
+  },
+  {
+    "team": "JV",
+    "boys": [
+      "Bentley Murdock",
+      "Garrett Frogley",
+      "Grant Wiberg",
+      "Jack Squire",
+      "Stockton Young",
+      "Thomas Oscarson",
+      "Ty Coles",
+      "Zach Hubrich"
+    ],
+    "girls": [
+      "Abby Poulton",
+      "Ava Kemp",
+      "Emily Gardner",
+      "Libby Derrick",
+      "Libby Phillips",
+      "Rita Titera"
+    ]
+  },
+  {
+    "team": "Club",
+    "boys": [
+      "Bennett Green",
+      "Boss Larsen",
+      "Crew Larsen",
+      "Dallin Ray",
+      "Daniel Fonseca",
+      "Henry Olsen",
+      "Hinckley Bess",
+      "Jaxon Taylor",
+      "Josh Warner",
+      "Luke Plowman",
+      "Mack Tanner",
+      "Mazor Fowler",
+      "Nash Plowman",
+      "Reed Atkin",
+      "Sawyer Maxwell",
+      "Sebastian aprvis",
+      "Spencer Williams",
+      "Stewart Heap",
+      "Tate Tandy"
+    ],
+    "girls": [
+      "Abby Eyring",
+      "Abigail Barlow",
+      "Avery Bingham",
+      "Elle Orvis",
+      "Emi Atkin",
+      "Halley Hawkins",
+      "Olivia Butterfield",
+      "Raquel Tanner",
+      "Sarah Marx",
+      "Sydney Bingham"
+    ]
+  }
+]
