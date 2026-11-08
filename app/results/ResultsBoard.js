@@ -2,6 +2,9 @@
 
 import { useMemo, useState } from "react";
 
+// Confirmed final meet results can be recorded even when fewer than seven matchups are logged.
+const CONFIRMED_FINAL_MEETS = new Set(["11/5/26|bountiful|pre-season mix"]);
+
 const FILTERS = [
   { key: "All", label: "All Meets" },
   { key: "Varsity", label: "Varsity" },
@@ -97,7 +100,7 @@ function MatchCard({ match, opponent }) {
 
 function MeetCard({ meet, index }) {
   const count = meet.matches.length;
-  const isComplete = count >= 7;
+  const isComplete = count >= 7 || CONFIRMED_FINAL_MEETS.has([meet.date, meet.opponent.trim().toLowerCase(), meet.team.trim().toLowerCase()].join("|"));
   return (
     <article className="wx-meet-card">
       <div className="wx-meet-meta">
@@ -111,7 +114,7 @@ function MeetCard({ meet, index }) {
           <div><div className="wx-team-name">WOODS CROSS</div><div className="wx-team-short">WX PICKLEBALL</div></div>
         </div>
         <div className="wx-score-center">
-          <div className="wx-score-kicker">{isComplete ? "FINAL SCORE" : "SCORE SO FAR"}</div>
+          <div className="wx-score-kicker">{isComplete ? (count >= 7 ? "FINAL SCORE" : "FINAL · REPORTED MATCHUPS") : "SCORE SO FAR"}</div>
           <div className="wx-score-numbers">
             <span className={meet.isWxWin ? "wx-leading-score wx-score-wx" : ""}>{meet.wx}</span>
             <i>:</i>
