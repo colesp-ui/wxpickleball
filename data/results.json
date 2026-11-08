@@ -76,6 +76,50 @@
       "Game 2": "-",
       "Game 3": "-",
       "Winner": "A.H."
+    },
+    {
+      "Date": "11/5/26",
+      "Opponent": "Bountiful",
+      "Team": "Pre-Season Mix",
+      "Match Type": "Boys Doubles",
+      "WX Players": "Drew / James",
+      "Game 1": "11-1",
+      "Game 2": "11-1",
+      "Game 3": "11-3",
+      "Winner": "WX"
+    },
+    {
+      "Date": "11/5/26",
+      "Opponent": "Bountiful",
+      "Team": "Pre-Season Mix",
+      "Match Type": "Girls Doubles",
+      "WX Players": "Chloe / Jojo",
+      "Game 1": "5-11",
+      "Game 2": "6-11",
+      "Game 3": "8-11",
+      "Winner": "WX"
+    },
+    {
+      "Date": "11/5/26",
+      "Opponent": "Bountiful",
+      "Team": "Pre-Season Mix",
+      "Match Type": "Mixed 1",
+      "WX Players": "Luke / Lillie",
+      "Game 1": "11-4",
+      "Game 2": "11-5",
+      "Game 3": "11-3",
+      "Winner": "WX"
+    },
+    {
+      "Date": "11/5/26",
+      "Opponent": "Bountiful",
+      "Team": "Pre-Season Mix",
+      "Match Type": "Mixed 2",
+      "WX Players": "Tyler / Roxy",
+      "Game 1": "11-5",
+      "Game 2": "11-6",
+      "Game 3": "11-4",
+      "Winner": "WX"
     }
   ]
 }

@@ -97,6 +97,7 @@ function MatchCard({ match, opponent }) {
 
 function MeetCard({ meet, index }) {
   const count = meet.matches.length;
+  const isComplete = count >= 7;
   return (
     <article className="wx-meet-card">
       <div className="wx-meet-meta">
@@ -110,14 +111,14 @@ function MeetCard({ meet, index }) {
           <div><div className="wx-team-name">WOODS CROSS</div><div className="wx-team-short">WX PICKLEBALL</div></div>
         </div>
         <div className="wx-score-center">
-          <div className="wx-score-kicker">FINAL SCORE</div>
+          <div className="wx-score-kicker">{isComplete ? "FINAL SCORE" : "SCORE SO FAR"}</div>
           <div className="wx-score-numbers">
             <span className={meet.isWxWin ? "wx-leading-score wx-score-wx" : ""}>{meet.wx}</span>
             <i>:</i>
             <span className={!meet.isWxWin && meet.opponentScore > meet.wx ? "wx-leading-score wx-score-opponent" : ""}>{meet.opponentScore}</span>
           </div>
           <div className={"wx-outcome " + (meet.isWxWin ? "wx-outcome-win" : "wx-outcome-loss")}>
-            {meet.isWxWin ? "WOODS CROSS WINS" : meet.opponent.toUpperCase() + " WINS"}
+            {isComplete ? (meet.isWxWin ? "WOODS CROSS WINS" : meet.opponent.toUpperCase() + " WINS") : (meet.wx > meet.opponentScore ? "WOODS CROSS LEADS" : meet.wx < meet.opponentScore ? meet.opponent.toUpperCase() + " LEADS" : "CURRENTLY TIED")}
           </div>
         </div>
         <div className="wx-side wx-side-away">
