@@ -120,6 +120,61 @@
       "Game 2": "11-6",
       "Game 3": "11-4",
       "Winner": "WX"
+    },
+    {
+      "Date": "11/12/26",
+      "Opponent": "Alta",
+      "Team": "Varsity",
+      "Match Type": "Boys Doubles",
+      "WX Players": "Drew / James",
+      "Game 1": "13-11",
+      "Game 2": "3-11",
+      "Game 3": "11-2",
+      "Winner": "WX"
+    },
+    {
+      "Date": "46338",
+      "Opponent": "Alta",
+      "Team": "Varsity",
+      "Match Type": "Girls Doubles",
+      "WX Players": "Joslyn / Roxanne",
+      "Game 1": "11-3",
+      "Game 2": "11-8",
+      "Game 3": "-",
+      "Winner": "WX"
+    },
+    {
+      "Date": "46338",
+      "Opponent": "Alta",
+      "Team": "Varsity",
+      "Match Type": "Mixed 1",
+      "WX Players": "Lillie / Luke",
+      "Game 1": "1-11",
+      "Game 2": "11-7",
+      "Game 3": "2-11",
+      "Winner": "Alta"
+    },
+    {
+      "Date": "46338",
+      "Opponent": "Alta",
+      "Team": "Varsity",
+      "Match Type": "Mixed 2",
+      "WX Players": "Chloe / Tyler",
+      "Game 1": "8-11",
+      "Game 2": "11-8",
+      "Game 3": "10-12",
+      "Winner": "Alta"
+    },
+    {
+      "Date": "46338",
+      "Opponent": "Alta",
+      "Team": "Varsity",
+      "Match Type": "DreamBreaker",
+      "WX Players": "ALL",
+      "Game 1": "21-16",
+      "Game 2": "-",
+      "Game 3": "-",
+      "Winner": "WX"
     }
   ]
 }
