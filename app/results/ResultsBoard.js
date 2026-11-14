@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 
 // Confirmed final meet results can be recorded even when fewer than seven matchups are logged.
-const CONFIRMED_FINAL_MEETS = new Set(["11/5/26|bountiful|pre-season mix", "11/12/26|alta|varsity"]);
+const CONFIRMED_FINAL_MEETS = new Set(["11/5/26|bountiful|pre-season mix", "11/12/26|alta|varsity", "11/13/26|bonneville|jv"]);
 
 const FILTERS = [
   { key: "All", label: "All Meets" },
@@ -84,7 +84,7 @@ function MatchCard({ match, opponent }) {
       <div className="wx-match-top">
         <span className="wx-match-type">{match.type}</span>
         <span className={"wx-result-tag " + (match.isWx ? "wx-result-win" : "wx-result-loss")}>
-          {match.isWx ? "WX WIN" : opponent + " WIN"}
+          {match.players.includes("eligibility forfeit") ? "FORFEIT" : match.isWx ? "WX WIN" : opponent + " WIN"}
         </span>
       </div>
       <div className="wx-match-players">{match.players}</div>
