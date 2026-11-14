@@ -175,6 +175,50 @@
       "Game 2": "-",
       "Game 3": "-",
       "Winner": "WX"
+    },
+    {
+      "Date": "11/13/26",
+      "Opponent": "Bonneville",
+      "Team": "JV",
+      "Match Type": "Boys Doubles",
+      "WX Players": "Jack Squire / Zach Hubrich",
+      "Game 1": "11-6",
+      "Game 2": "7-11",
+      "Game 3": "11-6",
+      "Winner": "WX"
+    },
+    {
+      "Date": "11/13/26",
+      "Opponent": "Bonneville",
+      "Team": "JV",
+      "Match Type": "Girls Doubles",
+      "WX Players": "Halley Hawkins / Raquel Tanner",
+      "Game 1": "9-11",
+      "Game 2": "11-8",
+      "Game 3": "11-10",
+      "Winner": "WX"
+    },
+    {
+      "Date": "11/13/26",
+      "Opponent": "Bonneville",
+      "Team": "JV",
+      "Match Type": "Mixed 1",
+      "WX Players": "Rita Titera / Stockton Young",
+      "Game 1": "11-9",
+      "Game 2": "11-1",
+      "Game 3": "-",
+      "Winner": "WX"
+    },
+    {
+      "Date": "11/13/26",
+      "Opponent": "Bonneville",
+      "Team": "JV",
+      "Match Type": "Mixed 2",
+      "WX Players": "Chloe Coles / Thomas Oscarson (on-court win; eligibility forfeit)",
+      "Game 1": "-",
+      "Game 2": "-",
+      "Game 3": "-",
+      "Winner": "Bonneville"
     }
   ]
 }
