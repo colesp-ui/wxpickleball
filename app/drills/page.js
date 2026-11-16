@@ -9,9 +9,7 @@ export const metadata = {
 export default function DrillsPage() {
   return (
     <main className="drills-page">
-      <div className="drills-shell">
-        <a href="/" className="drills-back">← WX PICKLEBALL HOME</a>
-      </div>
+      <div className="drills-top-link"><a href="/" className="drills-back">← WX PICKLEBALL HOME</a></div>
       <DrillViewer />
     </main>
   );
