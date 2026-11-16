@@ -167,6 +167,8 @@ export default function ResultsBoard({ rows, live }) {
   const visible = useMemo(() => meets.filter((meet) => filter === "All" || meet.category === filter), [meets, filter]);
   const varsityMeets = meets.filter((meet) => meet.category === "Varsity");
   const varsityWins = varsityMeets.filter((meet) => meet.isWxWin).length;
+  const jvMeets = meets.filter((meet) => meet.category === "JV");
+  const jvWins = jvMeets.filter((meet) => meet.isWxWin).length;
   const preseasonMeets = meets.filter((meet) => meet.category === "Preseason");
   const matchesLogged = meets.reduce((total, meet) => total + meet.matches.length, 0);
 
@@ -186,6 +188,7 @@ export default function ResultsBoard({ rows, live }) {
           <p>The matchups. The scores. The moments that make the season. Explore every Woods Cross pickleball meet, game by game.</p>
           <div className="wx-hero-stats">
             <div><span>VARSITY RECORD</span><strong>{varsityMeets.length ? varsityWins + "–" + (varsityMeets.length - varsityWins) : "—"}</strong><small>{varsityMeets.length ? "Official results" : "Season meets upcoming"}</small></div>
+            <div><span>JV RECORD</span><strong>{jvMeets.length ? jvWins + "–" + (jvMeets.length - jvWins) : "—"}</strong><small>{jvMeets.length ? "Official results" : "Season meets upcoming"}</small></div>
             <div><span>PRESEASON MEETS</span><strong>{preseasonMeets.length}</strong><small>Exhibition play</small></div>
             <div><span>MATCHUPS LOGGED</span><strong>{matchesLogged}</strong><small>Across all meets</small></div>
           </div>
@@ -212,7 +215,7 @@ export default function ResultsBoard({ rows, live }) {
           {visible.length ? <div className="wx-meets-list">{visible.map((meet, i) => <MeetCard key={meet.key} meet={meet} index={i} />)}</div> :
             <div className="wx-results-empty"><img src="/Logo.png" alt="WX Pickleball logo" className="wx-empty-logo" /><h3>No {filter === "All" ? "" : filter.toLowerCase() + " "}results yet</h3><p>When scores for this team are published, the meet cards will appear here.</p></div>
           }
-          <div className="wx-results-bottom"><p>Scores are displayed from the WX Pickleball scorebook. Preseason exhibitions do not count toward the official Varsity record.</p><a href="/#schedule">VIEW SEASON SCHEDULE <span>→</span></a></div>
+          <div className="wx-results-bottom"><p>Scores are displayed from the WX Pickleball scorebook. Preseason exhibitions do not count toward the official Varsity or JV records.</p><a href="/#schedule">VIEW SEASON SCHEDULE <span>→</span></a></div>
         </div>
       </main>
       <footer className="wx-results-footer"><div className="container"><span>© 2026 WX Pickleball · Woods Cross High School</span><a href="/">BACK TO HOME <span>→</span></a></div></footer>
