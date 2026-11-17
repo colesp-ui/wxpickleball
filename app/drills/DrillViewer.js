@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
 const drills = [
   ["Team Dinks", "/01_team_dinks.jpg"],
@@ -105,18 +106,49 @@ export default function DrillViewer() {
       </div>
       <p className="drills-footnote">Tap the picture to open the full-screen, swipeable gallery.</p>
 
-      {expanded && (
-        <div className="drills-fullscreen" role="dialog" aria-modal="true" aria-label="Swipe through practice drills" onTouchStart={startTouch} onTouchEnd={endTouch}>
-          <button type="button" className="drills-fullscreen-close" onClick={closeViewer} ref={closeRef} aria-label="Close drill viewer">×</button>
-          <div className="drills-fullscreen-image">
-            <img src={drills[active][1]} alt={`Drill ${active + 1} of 12: ${drills[active][0]}`} draggable="false" data-no-lightbox="true" width="1179" height="2556" />
+      {expanded && createPortal(
+        <div
+          className="drills-fullscreen"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Swipe through practice drills"
+          onTouchStart={startTouch}
+          onTouchEnd={endTouch}
+          style={{position:"fixed",inset:0,zIndex:2147483000,width:"100vw",height:"100dvh",background:"#081522",display:"flex",flexDirection:"column",overflow:"hidden",margin:0,padding:0,boxSizing:"border-box",touchAction:"pan-y"}}
+        >
+          <button
+            type="button"
+            className="drills-fullscreen-close"
+            onClick={closeViewer}
+            ref={closeRef}
+            aria-label="Close drill viewer"
+            style={{position:"absolute",top:"calc(env(safe-area-inset-top, 0px) + 10px)",right:12,zIndex:4,width:44,height:44,border:0,borderRadius:24,background:"rgba(2,15,27,.85)",color:"white",fontSize:32,display:"flex",alignItems:"center",justifyContent:"center",lineHeight:1}}
+          >×</button>
+          <div
+            className="drills-fullscreen-image"
+            style={{display:"flex",flex:"1 1 0",minHeight:0,minWidth:0,width:"100%",alignItems:"center",justifyContent:"center",overflow:"hidden",padding:"0 5px",boxSizing:"border-box"}}
+          >
+            <img
+              key={active}
+              src={drills[active][1]}
+              alt={`Drill ${active + 1} of 12: ${drills[active][0]}`}
+              draggable="false"
+              data-no-lightbox="true"
+              width="1179"
+              height="2556"
+              style={{display:"block",width:"auto",height:"auto",maxWidth:"100%",maxHeight:"100%",objectFit:"contain",flex:"0 1 auto",userSelect:"none",WebkitUserDrag:"none"}}
+            />
           </div>
-          <div className="drills-fullscreen-controls">
-            <button type="button" onClick={() => setActive(i => Math.max(0, i - 1))} disabled={active === 0} aria-label="Previous drill">‹</button>
+          <div
+            className="drills-fullscreen-controls"
+            style={{display:"flex",flex:"0 0 auto",height:"calc(50px + env(safe-area-inset-bottom, 0px))",paddingBottom:"env(safe-area-inset-bottom, 0px)",alignItems:"center",justifyContent:"center",gap:28,color:"white",fontWeight:800,fontSize:15,boxSizing:"border-box"}}
+          >
+            <button type="button" onClick={() => setActive(i => Math.max(0,i-1))} disabled={active===0} aria-label="Previous drill" style={{width:48,height:40,background:"#173b56",color:"#fff",fontSize:28,border:0,borderRadius:8,opacity:active===0?.3:1}}>‹</button>
             <span aria-live="polite">{active + 1} / {drills.length}</span>
-            <button type="button" onClick={() => setActive(i => Math.min(drills.length - 1, i + 1))} disabled={active === drills.length - 1} aria-label="Next drill">›</button>
+            <button type="button" onClick={() => setActive(i => Math.min(drills.length-1,i+1))} disabled={active===drills.length-1} aria-label="Next drill" style={{width:48,height:40,background:"#173b56",color:"#fff",fontSize:28,border:0,borderRadius:8,opacity:active===drills.length-1?.3:1}}>›</button>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );
