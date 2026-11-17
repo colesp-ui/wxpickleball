@@ -125,7 +125,7 @@ export default function DrillViewer() {
               data-no-lightbox="true"
               width="1179"
               height="2556"
-              style={{display:"block",width:"auto",height:"auto",maxWidth:"100%",maxHeight:"100%",objectFit:"contain",flex:"0 1 auto",userSelect:"none",WebkitUserDrag:"none"}}
+              style={{display:"block",width:"100%",height:"100%",maxWidth:"100%",maxHeight:"100%",objectFit:"fill",flex:"1 1 auto",minWidth:0,minHeight:0,userSelect:"none",WebkitUserDrag:"none"}}
             />
           </div>
           <div
