@@ -22,7 +22,6 @@ export default function DrillViewer() {
   const [active, setActive] = useState(0);
   const [expanded, setExpanded] = useState(false);
   const strip = useRef(null);
-  const touchStart = useRef(null);
   const opener = useRef(null);
   const closeRef = useRef(null);
 
@@ -66,36 +65,23 @@ export default function DrillViewer() {
     };
   }, [expanded]);
 
-  function startTouch(event) {
-    if (event.touches.length === 1) touchStart.current = { x: event.touches[0].clientX, y: event.touches[0].clientY };
-  }
-
-  function endTouch(event) {
-    if (!touchStart.current || !event.changedTouches.length) return;
-    const dx = event.changedTouches[0].clientX - touchStart.current.x;
-    const dy = event.changedTouches[0].clientY - touchStart.current.y;
-    touchStart.current = null;
-    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.2) {
-      setActive(value => Math.min(drills.length - 1, Math.max(0, value + (dx < 0 ? 1 : -1))));
-    }
-  }
 
   return (
     <div className="drills-shell">
       <div className="drills-heading">
         <span>WX PICKLEBALL · PRACTICE</span>
         <h1>DRILLS</h1>
-        <p>Tap a drill for full-screen viewing, then swipe between all 12.</p>
+        <p>Tap a drill for full-screen viewing, then tap the picture to advance.</p>
       </div>
       <div className="drills-toolbar">
         <button type="button" onClick={() => goTo(active - 1)} disabled={active === 0} aria-label="Previous drill">‹ Previous</button>
         <strong aria-live="polite">DRILL {active + 1} OF {drills.length}</strong>
         <button type="button" onClick={() => goTo(active + 1)} disabled={active === drills.length - 1} aria-label="Next drill">Next ›</button>
       </div>
-      <div className="drills-strip" ref={strip} onScroll={onScroll} aria-label="Swipeable practice drill images">
+      <div className="drills-strip" ref={strip} onScroll={onScroll} aria-label="Practice drill images">
         {drills.map(([name, src], i) => (
           <div className="drills-slide" key={src} aria-label={`Drill ${i + 1}: ${name}`}>
-            <button className="drills-open" type="button" onClick={event => openViewer(i, event.currentTarget)} aria-label={`Open drill ${i + 1} full-screen, then swipe between drills`}>
+            <button className="drills-open" type="button" onClick={event => openViewer(i, event.currentTarget)} aria-label={`Open drill ${i + 1} full-screen; tap to advance`}>
               <img src={src} alt={`Drill ${i + 1} of 12: ${name}. Pickleball court positioning and player actions.`} width="1179" height="2556" data-no-lightbox="true" loading={i < 2 ? "eager" : "lazy"} draggable="false" />
             </button>
           </div>
@@ -104,16 +90,14 @@ export default function DrillViewer() {
       <div className="drills-progress" role="group" aria-label="Select a drill">
         {drills.map(([name], i) => <button key={i} type="button" onClick={() => goTo(i)} className={i === active ? "selected" : ""} aria-label={`Go to drill ${i + 1}: ${name}`} aria-current={i === active ? "step" : undefined} />)}
       </div>
-      <p className="drills-footnote">Tap the picture to open the full-screen, swipeable gallery.</p>
+      <p className="drills-footnote">Tap the picture to open the full-screen gallery, then tap to advance.</p>
 
       {expanded && createPortal(
         <div
           className="drills-fullscreen"
           role="dialog"
           aria-modal="true"
-          aria-label="Swipe through practice drills"
-          onTouchStart={startTouch}
-          onTouchEnd={endTouch}
+          aria-label="Tap picture to advance through practice drills"
           style={{position:"fixed",inset:0,zIndex:2147483000,width:"100vw",height:"100dvh",background:"#081522",display:"flex",flexDirection:"column",overflow:"hidden",margin:0,padding:0,boxSizing:"border-box",touchAction:"pan-y"}}
         >
           <button
@@ -126,7 +110,12 @@ export default function DrillViewer() {
           >×</button>
           <div
             className="drills-fullscreen-image"
-            style={{display:"flex",flex:"1 1 0",minHeight:0,minWidth:0,width:"100%",alignItems:"center",justifyContent:"center",overflow:"hidden",padding:"0 5px",boxSizing:"border-box"}}
+            role="button"
+            tabIndex={0}
+            aria-label={active === drills.length - 1 ? "Final drill" : "Tap to view next drill"}
+            onClick={() => setActive(i => Math.min(drills.length - 1, i + 1))}
+            onKeyDown={event => { if (event.target === event.currentTarget && (event.key === "Enter" || event.key === " ")) { event.preventDefault(); setActive(i => Math.min(drills.length - 1, i + 1)); } }}
+            style={{display:"flex",flex:"1 1 0",minHeight:0,minWidth:0,width:"100%",alignItems:"center",justifyContent:"center",overflow:"hidden",padding:"0 5px",boxSizing:"border-box",cursor:active===drills.length-1?"default":"pointer"}}
           >
             <img
               key={active}
