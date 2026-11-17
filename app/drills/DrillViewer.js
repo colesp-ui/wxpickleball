@@ -115,7 +115,7 @@ export default function DrillViewer() {
             aria-label={active === drills.length - 1 ? "Final drill" : "Tap to view next drill"}
             onClick={() => setActive(i => Math.min(drills.length - 1, i + 1))}
             onKeyDown={event => { if (event.target === event.currentTarget && (event.key === "Enter" || event.key === " ")) { event.preventDefault(); setActive(i => Math.min(drills.length - 1, i + 1)); } }}
-            style={{display:"flex",flex:"1 1 0",minHeight:0,minWidth:0,width:"100%",alignItems:"center",justifyContent:"center",overflow:"hidden",padding:"0 5px",boxSizing:"border-box",cursor:active===drills.length-1?"default":"pointer"}}
+            style={{display:"flex",flex:"1 1 0",minHeight:0,minWidth:0,width:"100%",alignItems:"center",justifyContent:"center",overflow:"hidden",padding:0,boxSizing:"border-box",cursor:active===drills.length-1?"default":"pointer"}}
           >
             <img
               key={active}
@@ -125,17 +125,13 @@ export default function DrillViewer() {
               data-no-lightbox="true"
               width="1179"
               height="2556"
-              style={{display:"block",width:"auto",height:"auto",maxWidth:"100%",maxHeight:"100%",objectFit:"contain",flex:"0 1 auto",minWidth:0,minHeight:0,userSelect:"none",WebkitUserDrag:"none"}}
+              style={{display:"block",width:"100%",height:"100%",maxWidth:"100%",maxHeight:"100%",objectFit:"contain",flex:"0 1 auto",minWidth:0,minHeight:0,userSelect:"none",WebkitUserDrag:"none"}}
             />
           </div>
-          <div
-            className="drills-fullscreen-controls"
-            style={{display:"flex",flex:"0 0 auto",height:"calc(50px + env(safe-area-inset-bottom, 0px))",paddingBottom:"env(safe-area-inset-bottom, 0px)",alignItems:"center",justifyContent:"center",gap:28,color:"white",fontWeight:800,fontSize:15,boxSizing:"border-box"}}
-          >
-            <button type="button" onClick={() => setActive(i => Math.max(0,i-1))} disabled={active===0} aria-label="Previous drill" style={{width:48,height:40,background:"#173b56",color:"#fff",fontSize:28,border:0,borderRadius:8,opacity:active===0?.3:1}}>‹</button>
-            <span aria-live="polite">{active + 1} / {drills.length}</span>
-            <button type="button" onClick={() => setActive(i => Math.min(drills.length-1,i+1))} disabled={active===drills.length-1} aria-label="Next drill" style={{width:48,height:40,background:"#173b56",color:"#fff",fontSize:28,border:0,borderRadius:8,opacity:active===drills.length-1?.3:1}}>›</button>
+          <div className="drills-fullscreen-counter" aria-live="polite" style={{position:"absolute",zIndex:3,bottom:"calc(env(safe-area-inset-bottom, 0px) + 8px)",left:"50%",transform:"translateX(-50%)",borderRadius:16,background:"rgba(5,20,33,.77)",color:"#fff",fontSize:13,fontWeight:800,padding:"6px 12px",pointerEvents:"none"}}>
+            {active + 1} / {drills.length}
           </div>
+          <button type="button" aria-label="Previous drill" onClick={() => setActive(i => Math.max(0,i-1))} disabled={active===0} style={{position:"absolute",zIndex:3,bottom:"calc(env(safe-area-inset-bottom, 0px) + 7px)",left:12,width:38,height:34,border:0,borderRadius:10,background:"rgba(5,20,33,.75)",color:"#fff",fontSize:24,opacity:active===0?.3:1}}>‹</button>
         </div>,
         document.body
       )}
