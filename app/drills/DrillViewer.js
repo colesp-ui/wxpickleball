@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const drills = [
   ["Team Dinks", "/01_team_dinks.jpg"],
@@ -19,21 +19,64 @@ const drills = [
 
 export default function DrillViewer() {
   const [active, setActive] = useState(0);
+  const [expanded, setExpanded] = useState(false);
   const strip = useRef(null);
+  const touchStart = useRef(null);
+  const opener = useRef(null);
+  const closeRef = useRef(null);
 
   function goTo(index) {
     const next = Math.min(drills.length - 1, Math.max(0, index));
-    const viewport = strip.current;
-    if (!viewport) return;
-    viewport.scrollTo({ left: next * viewport.clientWidth, behavior: "smooth" });
     setActive(next);
+    if (strip.current) strip.current.scrollTo({ left: next * strip.current.clientWidth, behavior: "smooth" });
   }
 
   function onScroll(event) {
     const node = event.currentTarget;
-    if (!node.clientWidth) return;
-    const next = Math.min(drills.length - 1, Math.max(0, Math.round(node.scrollLeft / node.clientWidth)));
-    setActive(next);
+    if (node.clientWidth) setActive(Math.min(drills.length - 1, Math.max(0, Math.round(node.scrollLeft / node.clientWidth))));
+  }
+
+  function openViewer(index, element) {
+    opener.current = element;
+    setActive(index);
+    setExpanded(true);
+  }
+
+  function closeViewer() {
+    setExpanded(false);
+    if (strip.current) strip.current.scrollTo({ left: active * strip.current.clientWidth, behavior: "instant" });
+  }
+
+  useEffect(() => {
+    if (!expanded) return;
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    closeRef.current?.focus();
+    function onKey(event) {
+      if (event.key === "Escape") setExpanded(false);
+      if (event.key === "ArrowRight") setActive(value => Math.min(drills.length - 1, value + 1));
+      if (event.key === "ArrowLeft") setActive(value => Math.max(0, value - 1));
+    }
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      document.removeEventListener("keydown", onKey);
+      opener.current?.focus();
+    };
+  }, [expanded]);
+
+  function startTouch(event) {
+    if (event.touches.length === 1) touchStart.current = { x: event.touches[0].clientX, y: event.touches[0].clientY };
+  }
+
+  function endTouch(event) {
+    if (!touchStart.current || !event.changedTouches.length) return;
+    const dx = event.changedTouches[0].clientX - touchStart.current.x;
+    const dy = event.changedTouches[0].clientY - touchStart.current.y;
+    touchStart.current = null;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.2) {
+      setActive(value => Math.min(drills.length - 1, Math.max(0, value + (dx < 0 ? 1 : -1))));
+    }
   }
 
   return (
@@ -41,7 +84,7 @@ export default function DrillViewer() {
       <div className="drills-heading">
         <span>WX PICKLEBALL · PRACTICE</span>
         <h1>DRILLS</h1>
-        <p>Swipe left or right to move through all 12 warm-up drills.</p>
+        <p>Tap a drill for full-screen viewing, then swipe between all 12.</p>
       </div>
       <div className="drills-toolbar">
         <button type="button" onClick={() => goTo(active - 1)} disabled={active === 0} aria-label="Previous drill">‹ Previous</button>
@@ -51,14 +94,30 @@ export default function DrillViewer() {
       <div className="drills-strip" ref={strip} onScroll={onScroll} aria-label="Swipeable practice drill images">
         {drills.map(([name, src], i) => (
           <div className="drills-slide" key={src} aria-label={`Drill ${i + 1}: ${name}`}>
-            <img src={src} alt={`Drill ${i + 1} of 12: ${name}. Pickleball court positioning and player actions.`} width="1179" height="2556" loading={i < 2 ? "eager" : "lazy"} draggable="false" />
+            <button className="drills-open" type="button" onClick={event => openViewer(i, event.currentTarget)} aria-label={`Open drill ${i + 1} full-screen, then swipe between drills`}>
+              <img src={src} alt={`Drill ${i + 1} of 12: ${name}. Pickleball court positioning and player actions.`} width="1179" height="2556" data-no-lightbox="true" loading={i < 2 ? "eager" : "lazy"} draggable="false" />
+            </button>
           </div>
         ))}
       </div>
       <div className="drills-progress" role="group" aria-label="Select a drill">
         {drills.map(([name], i) => <button key={i} type="button" onClick={() => goTo(i)} className={i === active ? "selected" : ""} aria-label={`Go to drill ${i + 1}: ${name}`} aria-current={i === active ? "step" : undefined} />)}
       </div>
-      <p className="drills-footnote">Follow the drills in order from 1 to 12. Finish drill 12 by switching server and returner.</p>
+      <p className="drills-footnote">Tap the picture to open the full-screen, swipeable gallery.</p>
+
+      {expanded && (
+        <div className="drills-fullscreen" role="dialog" aria-modal="true" aria-label="Swipe through practice drills" onTouchStart={startTouch} onTouchEnd={endTouch}>
+          <button type="button" className="drills-fullscreen-close" onClick={closeViewer} ref={closeRef} aria-label="Close drill viewer">×</button>
+          <div className="drills-fullscreen-image">
+            <img src={drills[active][1]} alt={`Drill ${active + 1} of 12: ${drills[active][0]}`} draggable="false" data-no-lightbox="true" width="1179" height="2556" />
+          </div>
+          <div className="drills-fullscreen-controls">
+            <button type="button" onClick={() => setActive(i => Math.max(0, i - 1))} disabled={active === 0} aria-label="Previous drill">‹</button>
+            <span aria-live="polite">{active + 1} / {drills.length}</span>
+            <button type="button" onClick={() => setActive(i => Math.min(drills.length - 1, i + 1))} disabled={active === drills.length - 1} aria-label="Next drill">›</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
