@@ -219,6 +219,94 @@
       "Game 2": "-",
       "Game 3": "-",
       "Winner": "Bonneville"
+    },
+    {
+      "Date": "11/19/26",
+      "Opponent": "Skyline",
+      "Team": "Varsity",
+      "Match Type": "Boys Doubles",
+      "WX Players": "Drew / James",
+      "Game 1": "11-2",
+      "Game 2": "11-0",
+      "Game 3": "-",
+      "Winner": "WX"
+    },
+    {
+      "Date": "11/19/26",
+      "Opponent": "Skyline",
+      "Team": "Varsity",
+      "Match Type": "Girls Doubles",
+      "WX Players": "Joslyn / Roxanne",
+      "Game 1": "11-4",
+      "Game 2": "11-0",
+      "Game 3": "-",
+      "Winner": "WX"
+    },
+    {
+      "Date": "11/19/26",
+      "Opponent": "Skyline",
+      "Team": "Varsity",
+      "Match Type": "Mixed 1",
+      "WX Players": "Lillie / Luke",
+      "Game 1": "8-11",
+      "Game 2": "4-11",
+      "Game 3": "-",
+      "Winner": "Skyline"
+    },
+    {
+      "Date": "11/19/26",
+      "Opponent": "Skyline",
+      "Team": "Varsity",
+      "Match Type": "Mixed 2",
+      "WX Players": "Chloe / Stockton",
+      "Game 1": "11-8",
+      "Game 2": "11-0",
+      "Game 3": "-",
+      "Winner": "WX"
+    },
+    {
+      "Date": "11/20/26",
+      "Opponent": "American Heritage SLC",
+      "Team": "JV",
+      "Match Type": "Boys Doubles",
+      "WX Players": "Garrett / Jack",
+      "Game 1": "11-1",
+      "Game 2": "11-4",
+      "Game 3": "-",
+      "Winner": "WX"
+    },
+    {
+      "Date": "11/20/26",
+      "Opponent": "American Heritage SLC",
+      "Team": "JV",
+      "Match Type": "Girls Doubles",
+      "WX Players": "Emily / Libby D.",
+      "Game 1": "11-1",
+      "Game 2": "11-0",
+      "Game 3": "-",
+      "Winner": "WX"
+    },
+    {
+      "Date": "11/20/26",
+      "Opponent": "American Heritage SLC",
+      "Team": "JV",
+      "Match Type": "Mixed 1",
+      "WX Players": "Libby P. / Ty",
+      "Game 1": "11-2",
+      "Game 2": "11-2",
+      "Game 3": "-",
+      "Winner": "WX"
+    },
+    {
+      "Date": "11/20/26",
+      "Opponent": "American Heritage SLC",
+      "Team": "JV",
+      "Match Type": "Mixed 2",
+      "WX Players": "Ava / Bentley",
+      "Game 1": "11-2",
+      "Game 2": "11-8",
+      "Game 3": "-",
+      "Winner": "WX"
     }
   ]
 }
