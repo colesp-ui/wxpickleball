@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 
 // Confirmed final meet results can be recorded even when fewer than seven matchups are logged.
-const CONFIRMED_FINAL_MEETS = new Set(["11/5/26|bountiful|pre-season mix", "11/12/26|alta|varsity", "11/13/26|bonneville|jv"]);
+const CONFIRMED_FINAL_MEETS = new Set(["11/5/26|bountiful|pre-season mix", "11/12/26|alta|varsity", "11/13/26|bonneville|jv", "11/19/26|skyline|varsity", "11/20/26|american heritage slc|jv"]);
 
 const FILTERS = [
   { key: "All", label: "All Meets" },
